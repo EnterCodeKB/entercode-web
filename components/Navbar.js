@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
+import Button from "./EmailBtn";
 
 export default function Navbar() {
   return (
@@ -24,7 +24,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href={"/hur-vi-gor"}>Hur vi gör</Link>
+          <Link href={"pages/hur-vi-gor"}>Hur vi gör</Link>
         </li>
         <li>
           <Link href={"/projekt"}>Våra projekt</Link>

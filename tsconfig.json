@@ -30,7 +30,7 @@
     "app/pages/hur-vi-gor/page.js",
     "app/layout.jsx",
     "app/page.js",
-    "components/Button.js",
+    "components/EmailBtn.js",
     "components/Navbar.js",
     "components/Hero.js",
     "components/Features.js",

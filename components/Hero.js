@@ -5,29 +5,22 @@ const Hero = () => {
   return (
     <section className="hero">
       <img className="herobg" src="/herobg.jpeg" alt="" />
-      <div className="">
+      <div className="herotext">
         <div>
-          <h1 className="text-8xl text-center text-gray-900 mt-4 lg:text-6xl md:text-lg">
-            Välkommen Till EnterCode Sweden
-          </h1>
-          <h2 className="text-center font-bold text-gray-900 lg:text-6xl md:text-lg">
-            Bygg Framgångsrik Webbsida Med Oss
-          </h2>
-          <h3 className="text-center text-gray-900 mt-4">
+          <h1>Välkommen Till EnterCode Sweden</h1>
+          <h2>Bygg Framgångsrik Webbsida Med Oss</h2>
+          <p>
             Din hemsida framkallar dina affärsmål. <br /> Kom ihåg: <br /> Syns
             du inte så finns du inte!
-          </h3>
-        </div>
-        <br />
-        <div className="">
-          <Link
-            className="link"
-            href="/"
-            aria-label="Gå till formulärsidan"
-          ></Link>
+          </p>
+          <p>Vi har lösningen för att få ditt företag att växa.</p>
+          <p>
+            Navigera i affärsdjungeln med webbutveckling och <br />
+            få konsultation oavsett om du är nykläcktstart-up eller etablerad
+            bolag.
+          </p>
         </div>
       </div>
-      <p></p>
     </section>
   );
 };
