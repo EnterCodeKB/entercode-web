@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/whitebg.png"), url("/graybg.png"), url("/graybg.png"),
+    url("/whitebg.png");
+  background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%; /* Varje bild tar upp 50% av bredden och 100% av höjden */
+  background-position: left top, right top, left bottom, right bottom; /* Placera den ena till vänster och den andra till höger */
+  background-repeat: no-repeat; /* Förhindra att bilderna upprepas */
+  background-attachment: scroll; /* Bakgrunden växer med sidan */
+}
+
+/* CSS för att skapa A4-liknande container */
+.grid-container {
+  display: flex;
+  justify-content: center; /* Fortfarande centrerad horisontellt */
+  padding-top: 100px; /* Lägger till en toppmarginal */
+  min-height: 100vh; /* Fortsätter att ta upp minst hela skärmhöjden */
+}
+
+.a4-container {
+  width: 100%; /* Gör den flexibel och fyller hela bredden */
+  max-width: 1000px; /* Sätt en maximal bredd om du vill, annars tar den upp hela bredden */
+  background-color: white; /* Vit bakgrund */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Centrerar containern horisontellt */
+  overflow: visible; /* Gör att innehållet expanderar naturligt */
+  margin-top: 100px;
+}
+
+/*Navbar*/
+nav {
+  color: white;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.logo {
+  z-index: 10; /* Eller ett högre värde beroende på din layout */
+  position: relative;
+  padding: 20px;
+}
+
+ul {
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-right: 20px;
+}
+li {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+/*Herosection*/
+.hero {
+}
+h1 {
+  font-size: 2.8rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+.herobg {
+  height: 500px;
+  width: 100%;
+  margin-top: -255px;
+  z-index: 1;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-top: -100px;
+}
+
+.logo,
+.second-logo {
+  max-width: 100%;
+  height: auto;
+}
+/*Guide*/
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /* 4 kolumner som tar lika stor plats */
+  grid-gap: 10px; /* Mellanrum mellan rutorna */
+  width: 100%; /* Täcker hela sidans bredd */
+  height: 800px; /* Höjd för sektionen */
+  margin-top: 50px; /* Lägg till ett avstånd från toppen om du vill */
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 8px; /* Rundade hörn, om du vill */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Liten skugga för varje ruta */
+}
+.grid-item2 {
+  background-color: #919191;
+  font-size: 1.5rem;
+  border-radius: 8px; /* Rundade hörn, om du vill */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
