@@ -31,7 +31,7 @@
     "app/layout.jsx",
     "app/page.js",
     "components/EmailBtn.js",
-    "components/Navbar.js",
+    "components/Navbar.jsxx",
     "components/Hero.js",
     "components/Features.js",
     "components/Camp.js",

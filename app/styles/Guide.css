@@ -1,0 +1,95 @@
+.section {
+  width: 100%;
+  max-width: 1400px;
+  height: 800px;
+  overflow: hidden;
+  display: flex;
+}
+
+.övertext-container {
+  width: 150%;
+  margin-top: 100px;
+
+  margin-right: 160px;
+}
+.övertextdiv {
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #1e367d;
+  color: white;
+  border-radius: 8px;
+}
+
+.images-container {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 400px;
+}
+
+.imgspel {
+  width: 250;
+  position: absolute;
+  animation: floatIn 2.5s ease forwards;
+  opacity: 0;
+  animation-play-state: paused; /* Stoppar animationen initialt */
+  margin-left: 50px;
+}
+
+.img1 {
+  animation-delay: 0.3s;
+  top: 20px;
+  left: -20px;
+  transform: translateX(-50px);
+}
+
+.img2 {
+  animation-delay: 0.6s;
+  top: 10px;
+  left: 70px;
+  transform: translateY(50px);
+}
+
+.img3 {
+  animation-delay: 0.9s;
+  margin-top: 50px;
+  left: 250px;
+  transform: translateX(50px);
+}
+
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.text-container {
+  position: absolute;
+  bottom: -50px;
+  right: 70px;
+  animation: slideUp 1.5s ease-out forwards;
+  opacity: 0;
+  max-width: 50%;
+  margin-top: -20px;
+}
+
+@keyframes slideUp {
+  to {
+    bottom: 100px; /*margin-top på texten som sullas upp*/
+    opacity: 1;
+  }
+}
+
+.ptext {
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #a0c2e7;
+  color: #1e367d;
+  border-radius: 8px;
+  text-align: left;
+}

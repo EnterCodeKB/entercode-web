@@ -1,0 +1,32 @@
+.logo {
+  margin-left: 50px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.lidiv {
+  font-size: 1.2rem;
+  font-weight: 600; /* Gör texten fetare */
+  margin-top: 20px;
+}
+
+.navdiv {
+  color: #346ab4;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.uldiv {
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  gap: 116px;
+  margin-right: 100px;
+}

@@ -1,47 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./EmailBtn";
+import styles from "../app/styles/Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <nav>
-      <div className="logo-container">
+    <nav className={styles.navdiv}>
+      <div className={styles.logocontainer}>
         <Link href="/">
           <Image
-            className="logo"
-            src="/logomedtext.png"
+            className={styles.logo}
+            src="/bluelogganjpg.jpg"
             alt="logo"
-            width={160} // Ange bildstorlek
-            height={160} // Ange bildstorlek
-            priority // Optimera bilden för snabb laddning
+            width={170}
+            height={170}
+            priority
+            layout="intrinsic"
           />
         </Link>
       </div>
-      <ul>
-        <li>
-          <Link href={"/"}>
-            <span className="hem">Hem</span>
-          </Link>
+      <ul className={styles.uldiv}>
+        <li className={styles.lidiv}>
+          <Link href="/">HEM</Link>
         </li>
-        <li>
-          <Link href={"pages/hur-vi-gor"}>Hur vi gör</Link>
+        <li className={styles.lidiv}>
+          <Link href="/hur-vi-gor">OM OSS</Link>
         </li>
-        <li>
-          <Link href={"/projekt"}>Våra projekt</Link>
+        <li className={styles.lidiv}>
+          <Link href="/projekt">SÅ FUNGERAR DET</Link>
         </li>
-        <li>
-          <Link href={"/kontakt"}>Kontakta Oss</Link>
+        <li className={styles.lidiv}>
+          <Link href="/kontakt">KONTAKT</Link>
         </li>
       </ul>
-
-      {/* Logga in-knappen, om du vill använda den senare */}
-      {/* 
-      <div className="login lg:block">
-        <Link href={"/login"}>
-          <button>Logga in</button>
-        </Link>
-      </div>
-      */}
     </nav>
   );
 }

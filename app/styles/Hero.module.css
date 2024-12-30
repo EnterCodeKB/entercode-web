@@ -1,0 +1,75 @@
+/* Allmän stil för Montserrat */
+.montserrat-normal {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Normal vikt */
+  font-style: normal;
+  color: #1e367d;
+}
+
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* Fet stil */
+  font-style: normal;
+  color: #1e367d;
+}
+
+.herotext {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px; /* Anpassa höjden efter behov */
+  background-size: cover;
+  margin-top: 100px;
+}
+/* Använder Montserrat för h1 och h2 */
+.divh1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #1e367d;
+  opacity: 0;
+  animation: slideInLeft 1.5s ease forwards;
+  font-family: "Montserrat", sans-serif; /* Lägg till Montserrat */
+}
+
+.divh2 {
+  font-size: 2.5rem;
+  opacity: 0;
+  font-weight: 600;
+  color: #346ab4;
+  animation: slideInRight 1.5s ease forwards;
+  animation-delay: 0.5s;
+  font-family: "Montserrat", sans-serif; /* Lägg till Montserrat */
+}
+
+/* Animation för h1 */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation för h2 */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -7,8 +7,8 @@ export default function Button() {
       <img
         src="/epost-knapp.jpeg"
         alt="e-post knapp"
-        width={350} // Ange bildstorlek
-        height={350} // Ange bildstorlek
+        width={300} // Ange bildstorlek
+        height={300} // Ange bildstorlek
         priority
       />
     </button>

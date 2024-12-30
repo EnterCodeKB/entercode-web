@@ -2,172 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FÄRG
+loggans färg: #342755 och ljusa #2645A2 och mjörkblå #1e367d
+text-bg  #3583d2, ljusblå - #1e367d, lite mörkare -  #346AB4
+mellanslag: &nbsp;
+
+TEXT 
+font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background: #3583d2;
+  color: white;
+  border-radius: 8px;
+
+*/
+
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url("/whitebg.png"), url("/graybg.png"), url("/graybg.png"),
-    url("/whitebg.png"), url("/whitebg.png"), url("/graybg.png");
-  background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%; /* Varje bild tar upp 50% av bredden och 100% av höjden */
-  background-position: left top, right top, left bottom, right bottom; /* Placera den ena till vänster och den andra till höger */
-  background-repeat: no-repeat; /* Förhindra att bilderna upprepas */
-  background-attachment: scroll; /* Bakgrunden växer med sidan */
+  background-color: azure;
 }
 
 h1 {
-  color: #333333;
+  color: #342755;
   font-size: 2.8rem;
 }
 h2 {
-  color: #4f4f4f;
+  color: #1e367d;
   font-size: 1.8rem;
 }
-p {
-  color: #666666;
-}
-
-/* CSS för att skapa A4-liknande container */
-.grid-container {
-  display: flex;
-  justify-content: center; /* Fortfarande centrerad horisontellt */
-  padding-top: 80px; /* Lägger till en toppmarginal */
-  min-height: 100vh; /* Fortsätter att ta upp minst hela skärmhöjden */
-}
-
-.a4-container {
-  width: 100%; /* Gör den flexibel och fyller hela bredden */
-  max-width: 1000px; /* Sätt en maximal bredd om du vill, annars tar den upp hela bredden */
-  background-color: white; /* Vit bakgrund */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.328);
-  margin: 0 auto; /* Centrerar containern horisontellt */
-  overflow: visible; /* Gör att innehållet expanderar naturligt */
-  margin-top: 100px;
-}
-
-/*Navbar*/
-nav {
-  color: white;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.logo {
-  z-index: 10; /* Eller ett högre värde beroende på din layout */
-  position: relative;
-  padding: 20px;
-}
-
-ul {
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-right: 20px;
-}
-li {
-  font-size: 1.5rem;
-  margin-top: 20px;
-}
-
-/*Herosection*/
-
-.herobg {
-  height: 500px;
-  width: 100%;
-  margin-top: -255px;
-  z-index: 1;
-}
-.logo-container {
-  display: flex;
-  align-items: center;
-  margin-top: -100px;
-}
-
-.logo,
-.second-logo {
-  max-width: 100%;
-  height: auto;
-}
-
-.herotext {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-
-/*Guide*/
-.grid-section {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolumner */
-  width: 100%; /* Täcker hela sidans bredd */
-  height: 600px; /* Höjd för sektionen */
-  margin-top: 50px; /* Avstånd från toppen */
-}
-
-.grid-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-}
-
-.gridimg1 {
-  height: 350px;
-}
-
-.grid-item2,
-.grid-item3 {
-  background-color: #919191; /* Grå bakgrund */
-  font-size: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Liten skugga */
-  padding: 20px; /* Ger mellanrum från kanterna */
-  display: flex; /* Gör så att den vita rutan kan centreras */
-  justify-content: center;
-  align-items: center;
-}
-
-.white-space {
-  background-color: white; /* Vit bakgrund */
-  width: 450px;
-  height: 300px;
-  text-align: center; /* Centrerar texten */
-  padding: 10px;
-  line-height: 1.8;
-}
-
-.grid-item3 {
-}
-
-.grid-item4 img {
-  max-width: 100%;
-  height: 350px;
-  display: block;
-}
-
-.white-space p {
-  font-size: 1.2rem;
-  text-align: left;
-}
-.white-space li {
-  line-height: 0.8;
-  text-align: left;
-  font-size: 1.2rem;
-}
-/*Kontakt Buttons*/
-.buttons {
-  width: 80%;
-  margin-top: 100px;
-  margin-left: 90px;
-  gap: 10px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 100px;
-}
-button img,
-button {
-  border-radius: 800px; /* Ändra detta värde för att justera rundningen */
-}
 
 button {
   border: none;
@@ -180,74 +41,4 @@ button {
   top: 0;
   left: 0;
   backface-visibility: hidden; /* Dölj baksidan av elementen när de roterar */
-}
-
-.front {
-  z-index: 2;
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  font-size: 24px;
-  color: #333;
-}
-.flip-container {
-  perspective: 1000px; /* Skapar en 3D-effekt */
-}
-
-.flipper {
-  position: relative;
-  width: 350px;
-  height: 350px;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-
-.flipped .flipper {
-  transform: rotateY(180deg);
-}
-
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden; /* Dölj baksidan av elementen när de roterar */
-}
-
-.front {
-  z-index: 2;
-  transform: rotateY(0deg);
-}
-
-.back {
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  font-size: 24px;
-  color: #333;
-}
-/*Footer*/
-
-.footer {
-  background-color: black;
-}
-.box43 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
