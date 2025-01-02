@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-export default function Work() {
+export default function Projekt() {
   return (
     <div className="grid-container">
       <div className="a4-container">

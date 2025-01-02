@@ -5,7 +5,7 @@
 /* FÄRG
 loggans färg: #342755 och ljusa #2645A2 och mjörkblå #1e367d
 text-bg  #3583d2, ljusblå - #1e367d, lite mörkare -  #346AB4
-mellanslag: &nbsp;
+mellanslag: &nbsp; bodys: ljusblå azure.
 
 TEXT 
 font-size: 1.5rem;
@@ -18,7 +18,7 @@ font-size: 1.5rem;
 */
 
 body {
-  background-color: azure;
+  background-color: rgb(241, 247, 250);
 }
 
 h1 {

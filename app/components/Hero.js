@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Cards from "./Cards";
-import styles from "../app/styles/Hero.module.css";
+import styles from "../styles/Hero.module.css";
 
 const Hero = () => {
   return (

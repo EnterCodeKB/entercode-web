@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../app/styles/Navbar.module.css";
+import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
   return (
@@ -9,7 +9,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             className={styles.logo}
-            src="/bluelogganjpg.jpg"
+            src="/entercodeny.png"
             alt="logo"
             width={170}
             height={170}
@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link href="/">HEM</Link>
         </li>
         <li className={styles.lidiv}>
-          <Link href="/hur-vi-gor">OM OSS</Link>
+          <Link href="/pages/omoss">OM OSS</Link>
         </li>
         <li className={styles.lidiv}>
           <Link href="/projekt">SÅ FUNGERAR DET</Link>

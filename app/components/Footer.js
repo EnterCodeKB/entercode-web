@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import styles from "../app/styles/Footer.module.css";
+import styles from "../styles/Footer.module.css";
 import Link from "next/link";
 
 export default function Footer() {
@@ -27,15 +27,15 @@ export default function Footer() {
 
         <div className={styles.column}>
           <h4 className={styles.divh4}>info@entercode.se</h4>
-          <img src="/footer/QR.png" width={80} alt="" />
+          <img src="  /qr.png" width={80} alt="" />
 
-          <Link href="">
+          {/*<Link href="">
             <img
               className={styles.imglinkedin}
               src="/vitlinkedin.png"
               alt="linkedin"
             />
-          </Link>
+          </Link>*/}
         </div>
       </div>
     </div>

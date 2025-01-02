@@ -1,6 +1,7 @@
 import Head from "next/head";
 import "./globals.css";
-import Footer from "../components/Footer";
+import Footer from "./components/Footer";
+import Nav from "./components/Navbar";
 
 export default function RootLayout({ children }) {
   return (
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body>
+        <Nav />
         <main className="relative">{children}</main>
       </body>
       <Footer />
