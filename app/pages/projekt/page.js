@@ -1,20 +1,29 @@
 "use client";
 import React from "react";
 
+import ImageCarousel from "../../components/ImageCarousel";
+import styles from "./Projekt.module.css";
+
 export default function Projekt() {
+  const carousels = [
+    ["/images/img1.png", "/images/img2.png", "/images/img3.png"],
+    ["/images/img4.png", "/images/img5.png", "/images/img6.png"],
+    ["/images/img7.png", "/images/img8.png", "/images/img9.png"],
+  ];
+
   return (
-    <div className="grid-container">
-      <div className="a4-container">
-        <h1>Hur vi arbetar</h1>
-        <ul>
-          <li>1. Analyserar dina behov</li>
-          <li>2. Designar och utvecklar </li>
-          <li>3. Anpassar din hemsida för mobila enheter </li>
-          <li>4. Lanserar och optimerar </li>
-          <li>5. Publicera din hemsida</li>
-          <li>6. Support och underhåll</li>
-        </ul>
-      </div>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1>Välkommen till vår sida</h1>
+        <p>Här hittar du våra senaste projekt och inspiration.</p>
+      </header>
+      <section className={styles.carouselSection}>
+        {carousels.map((images, index) => (
+          <div key={index} className={styles.column}>
+            <ImageCarousel images={images} />
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

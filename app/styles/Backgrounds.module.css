@@ -1,0 +1,13 @@
+.bg-home-page {
+  background-image: url(/backgronds/Depositphotos_46659543_XL.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.bg-default-page {
+  background-color: #f5f5f5; /* Ingen bakgrundsbild */
+  min-height: 100vh; /* Säkerställ att sidan fyller hela höjden */
+}

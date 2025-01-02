@@ -1,7 +1,6 @@
 import Guide from "./components/Guide";
 import Hero from "./components/Hero";
 import React from "react";
-import Navbar from "./components/Navbar";
 import "./styles/Guide.css";
 import "./styles/Footer.module.css";
 

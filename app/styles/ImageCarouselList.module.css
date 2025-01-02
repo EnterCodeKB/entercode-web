@@ -1,0 +1,10 @@
+.carouselList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Avstånd mellan karuseller */
+  align-items: center; /* Centrera karuseller */
+}
+
+.carouselItem {
+  width: 100%; /* Anpassa bredd för varje karusell */
+}

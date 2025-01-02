@@ -13,8 +13,6 @@ export default function Navbar() {
             alt="logo"
             width={170}
             height={170}
-            priority
-            layout="intrinsic"
           />
         </Link>
       </div>
@@ -26,7 +24,7 @@ export default function Navbar() {
           <Link href="/pages/omoss">OM OSS</Link>
         </li>
         <li className={styles.lidiv}>
-          <Link href="/projekt">SÅ FUNGERAR DET</Link>
+          <Link href="/pages/projekt">WEBBSIDOR</Link>
         </li>
         <li className={styles.lidiv}>
           <Link href="/kontakt">KONTAKT</Link>

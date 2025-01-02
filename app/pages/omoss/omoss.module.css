@@ -1,9 +1,14 @@
+.gridcontainer {
+  background-color: rgb(241, 247, 250);
+  margin-top: 20px;
+}
+
 .a4container {
   display: flex;
   flex-direction: row;
   padding: 40px;
   gap: 100px;
-  margin-bottom: 60px;
+  background-color: rgb(241, 247, 250);
 }
 
 .gardincontainer {

@@ -1,13 +1,16 @@
 import Head from "next/head";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Navbar";
+import BackgroundWrapper from "./components/BackgroundWrapper";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <title>Your Page Title</title>
+        <title>EnterCode Sweden KB</title>
         <meta name="description" content="Description of your page" />
 
         {/* Lägg till Montserrat-fonten från Google Fonts */}
@@ -23,10 +26,12 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body>
-        <Nav />
-        <main className="relative">{children}</main>
+        <BackgroundWrapper>
+          <Nav />
+          <main className="relative">{children}</main>
+        </BackgroundWrapper>
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
 }
