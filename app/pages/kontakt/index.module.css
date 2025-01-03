@@ -1,0 +1,89 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrerar innehåll horisontellt */
+  gap: 2rem; /* Skapar avstånd mellan rubrik, formulär och kontaktinfo */
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px; /* Begränsar formulärets bredd */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Avstånd mellan input-fälten */
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%; /* Full bredd inom formuläret */
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.inputGroup textarea {
+  resize: none; /* Förhindra att textarea kan ändras i storlek */
+}
+
+.inputButton {
+  display: block; /* Gör knappen till ett blockelement */
+  width: 200px; /* Fixera knappens bredd */
+  height: 50px; /* Fixera knappens höjd */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto; /* Centrerar knappen horisontellt */
+  line-height: 50px; /* Vertikal centrerad text inom knappen */
+}
+
+.inputButton:hover {
+  background-color: #0056b3;
+}
+
+.contactInfo {
+  text-align: center;
+  color: #555;
+  margin-top: 2rem; /* Skapar avstånd från formuläret */
+}
+
+.contactInfo h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+.inputButton {
+  position: relative !important;
+}

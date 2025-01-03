@@ -27,7 +27,7 @@ export default function Navbar() {
           <Link href="/pages/projekt">WEBBSIDOR</Link>
         </li>
         <li className={styles.lidiv}>
-          <Link href="/kontakt">KONTAKT</Link>
+          <Link href="/pages/kontakt">KONTAKT</Link>
         </li>
       </ul>
     </nav>
