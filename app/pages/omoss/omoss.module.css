@@ -11,6 +11,22 @@
   background-color: rgb(241, 247, 250);
 }
 
+.visioncontainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+  width: 80%;
+
+  margin-left: 100px;
+}
+.visiondiv {
+  width: 80%;
+  margin-left: 100px;
+}
+.ul {
+  list-style: circle;
+}
+
 .gardincontainer {
   flex-direction: column;
   margin-top: 60px;
@@ -29,9 +45,16 @@
 }
 
 .textcontainer {
-  width: 40%;
+  width: 90%;
   margin-top: 90px;
-  margin-left: 100px;
+  margin-left: 50px;
+}
+.visiondiv {
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 50px;
+  line-height: 3rem;
+  margin-bottom: 60px;
 }
 
 .workimg {

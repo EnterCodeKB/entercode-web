@@ -1,7 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./index.module.css";
 
 const KontaktSida = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:4000/api/kontakt", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Din förfrågan har skickats!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Något gick fel. Försök igen.");
+      }
+    } catch (error) {
+      alert("Ett fel inträffade: " + error.message);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Kontakta oss</h1>
@@ -9,10 +44,17 @@ const KontaktSida = () => {
         Har du frågor eller funderingar? Fyll i formuläret nedan eller kontakta
         oss direkt via e-post eller telefon.
       </p>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
           <label htmlFor="name">Namn</label>
-          <input type="text" id="name" name="name" placeholder="Ditt namn" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ditt namn"
+            value={formData.name}
+            onChange={handleChange}
+          />
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="email">E-post</label>
@@ -21,6 +63,8 @@ const KontaktSida = () => {
             id="email"
             name="email"
             placeholder="Din e-postadress"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
         <div className={styles.inputGroup}>
@@ -30,6 +74,8 @@ const KontaktSida = () => {
             name="message"
             rows="5"
             placeholder="Ditt meddelande"
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
         </div>
         <button type="submit" className={styles.inputButton}>

@@ -58,7 +58,7 @@
   display: block; /* Gör knappen till ett blockelement */
   width: 200px; /* Fixera knappens bredd */
   height: 50px; /* Fixera knappens höjd */
-  background-color: #007bff;
+  background-color: #1e367d;
   color: white;
   border: none;
   border-radius: 4px;
@@ -71,7 +71,7 @@
 }
 
 .inputButton:hover {
-  background-color: #0056b3;
+  background-color: #1eb4cd;
 }
 
 .contactInfo {

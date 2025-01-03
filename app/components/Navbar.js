@@ -23,9 +23,7 @@ export default function Navbar() {
         <li className={styles.lidiv}>
           <Link href="/pages/omoss">OM OSS</Link>
         </li>
-        <li className={styles.lidiv}>
-          <Link href="/pages/projekt">WEBBSIDOR</Link>
-        </li>
+
         <li className={styles.lidiv}>
           <Link href="/pages/kontakt">KONTAKT</Link>
         </li>

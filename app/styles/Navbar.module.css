@@ -13,7 +13,7 @@
 }
 
 .navdiv {
-  color: #346ab4;
+  color: #1e367d;
   width: 100%;
   z-index: 1;
   display: flex;
@@ -27,6 +27,6 @@
   z-index: 999;
   display: flex;
   justify-content: center;
-  gap: 116px;
+  gap: 90px;
   margin-right: 100px;
 }
