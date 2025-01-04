@@ -41,8 +41,10 @@ const KontaktSida = () => {
     <div className={styles.container}>
       <h1 className={styles.heading}>Kontakta oss</h1>
       <p className={styles.description}>
-        Har du frågor eller funderingar? Fyll i formuläret nedan eller kontakta
-        oss direkt via e-post eller telefon.
+        Behöver du hjälp med att skapa en professionell hemsida eller utveckla
+        digitala lösningar? <br />
+        Fyll i formuläret nedan så kontaktar vi dig för att diskutera dina idéer
+        och behov.
       </p>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
