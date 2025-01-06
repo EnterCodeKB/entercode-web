@@ -73,3 +73,63 @@
     opacity: 1;
   }
 }
+/* Hero: Små skärmar */
+@media (max-width: 480px) {
+  .hero {
+    height: 300px;
+    margin-top: 50px;
+  }
+
+  .divh1 {
+    font-size: 2rem;
+  }
+
+  .divh2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hero: Tablets */
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+
+  .divh1 {
+    font-size: 2.5rem;
+  }
+
+  .divh2 {
+    font-size: 2rem;
+  }
+}
+
+/* Hero: Stora skärmar */
+@media (min-width: 1200px) {
+  .hero {
+    height: 600px;
+  }
+
+  .divh1 {
+    font-size: 4rem;
+  }
+
+  .divh2 {
+    font-size: 2.8rem;
+  }
+}
+
+/* Hero: Ultrabreda skärmar */
+@media (min-width: 1440px) {
+  .hero {
+    height: 700px;
+  }
+
+  .divh1 {
+    font-size: 4.5rem;
+  }
+
+  .divh2 {
+    font-size: 3rem;
+  }
+}

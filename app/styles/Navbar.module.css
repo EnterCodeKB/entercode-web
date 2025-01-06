@@ -30,3 +30,37 @@
   gap: 90px;
   margin-right: 100px;
 }
+/* Små mobiler */
+@media (max-width: 480px) {
+  .navdiv {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .uldiv {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+  }
+
+  .logo {
+    margin: 0;
+    width: 120px; /* Mindre logotyp */
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .navdiv {
+    padding: 15px 0;
+  }
+
+  .uldiv {
+    gap: 30px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}

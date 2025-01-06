@@ -47,3 +47,115 @@ button {
   left: 0;
   backface-visibility: hidden; /* Dölj baksidan av elementen när de roterar */
 }
+/* Små mobiler */
+@media (max-width: 480px) {
+  .navdiv {
+    flex-direction: column; /* Stapla navigering på små skärmar */
+    align-items: center;
+    height: auto;
+  }
+
+  .uldiv {
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 0;
+  }
+
+  .hero {
+    height: 300px; /* Minska höjden på hero-sektionen */
+    padding: 20px;
+  }
+
+  .divh1 {
+    font-size: 2rem; /* Justera textstorlek för h1 */
+  }
+
+  .divh2 {
+    font-size: 1.5rem; /* Justera textstorlek för h2 */
+  }
+
+  .logocontainer img {
+    width: 120px; /* Minska storleken på logotypen */
+  }
+}
+
+/* Tablets och större mobiler */
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+    padding: 30px;
+  }
+
+  .uldiv {
+    gap: 40px;
+  }
+
+  .divh1 {
+    font-size: 2.5rem;
+  }
+
+  .divh2 {
+    font-size: 2rem;
+  }
+
+  .navdiv {
+    padding: 10px;
+  }
+
+  .logocontainer img {
+    width: 150px;
+  }
+}
+
+/* Mindre laptops */
+@media (max-width: 991px) {
+  .hero {
+    height: 450px;
+  }
+
+  .divh1 {
+    font-size: 3rem;
+  }
+
+  .divh2 {
+    font-size: 2.2rem;
+  }
+
+  .uldiv {
+    gap: 60px;
+  }
+}
+
+/* Större skärmar */
+@media (min-width: 1200px) {
+  .hero {
+    height: 600px;
+  }
+
+  .divh1 {
+    font-size: 4rem;
+  }
+
+  .divh2 {
+    font-size: 2.8rem;
+  }
+
+  .uldiv {
+    gap: 90px;
+  }
+}
+
+/* Ultrabreda skärmar */
+@media (min-width: 1440px) {
+  .hero {
+    height: 700px;
+  }
+
+  .divh1 {
+    font-size: 4.5rem;
+  }
+
+  .divh2 {
+    font-size: 3rem;
+  }
+}
