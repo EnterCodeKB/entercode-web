@@ -2,7 +2,7 @@
 import React from "react";
 
 import ImageCarousel from "../../components/ImageCarousel";
-import styles from "./Projekt.module.css";
+import styles from "./projekt.module.css";
 
 export default function Projekt() {
   const carousels = [
