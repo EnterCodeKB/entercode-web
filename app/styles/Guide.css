@@ -25,9 +25,10 @@
   position: relative;
   width: 50%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-top: 400px;
+  margin-left: 100px;
 }
 
 .imgspel {
@@ -93,3 +94,115 @@
   border-radius: 8px;
   text-align: left;
 }
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Media Queries */
+
+/* Små mobiler */
+/* Media Queries */
+
+/* Små mobiler */
+@media (max-width: 480px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px; /* Lägg till luft runt sektionen */
+    margin-top: 50px; /* Flytta hela sektionen längre ner */
+  }
+  .övertext-container {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 30px; /* Mer luft ovanför texten */
+  }
+  .övertextdiv {
+    font-size: 1rem;
+    padding: 20px; /* Mer luft i textbehållaren */
+  }
+  .images-container {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    margin: 30px 0; /* Mer luft runt bilder */
+  }
+  .imgspel {
+    max-width: 140px; /* Anpassa bildstorlek */
+    margin: 15px; /* Luft mellan bilder */
+  }
+  .text-container {
+    position: relative;
+    margin-top: 30px; /* Flytta texten längre ner */
+    width: 100%;
+    padding: 15px;
+  }
+  .ptext {
+    font-size: 1rem;
+    padding: 20px; /* Mer luft för bättre läsbarhet */
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    padding: 30px 20px;
+    margin-top: 70px; /* Flytta sektionen längre ner */
+  }
+  .övertext-container {
+    margin-right: 0;
+    width: 90%;
+    margin-top: 40px; /* Luft ovanför texten */
+  }
+  .övertextdiv {
+    font-size: 1.2rem;
+    padding: 25px;
+  }
+  .images-container {
+    width: 80%;
+    margin: 40px 0; /* Luft mellan text och bilder */
+  }
+  .imgspel {
+    max-width: 180px;
+    margin-bottom: 20px;
+  }
+  .text-container {
+    margin-top: 50px; /* Flytta texten längre ner */
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Laptops (769px - 1199px) */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .section {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 30px;
+  }
+  .övertext-container {
+    margin-top: 40px;
+    width: 60%;
+  }
+  .övertextdiv {
+    font-size: 1.4rem;
+    padding: 20px;
+  }
+  .images-container {
+    width: 50%;
+    margin-top: 30px;
+  }
+  .imgspel {
+    max-width: 220px;
+  }
+  .text-container {
+    margin-top: 40px;
+    width: 50%;
+    padding: 20px;
+  }
+}
+
+/* Stora skärmar (1200px - 1439px) */

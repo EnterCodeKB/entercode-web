@@ -1,66 +1,106 @@
-.logo {
-  margin-left: 50px;
-  margin-top: 30px;
+.navdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: transparent; /* Transparent navbar */
+  position: relative;
+}
+
+.logocontainer {
   display: flex;
   align-items: center;
-  margin-right: 100px;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.menuContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 40px; /* Flytta närmare logotypen */
+  position: relative; /* Behåll position inom flow */
+  z-index: 999; /* Gör den synlig ovanpå allt annat */
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 3px;
+  background-color: black; /* Svart hamburgare */
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.uldiv {
+  list-style: none;
+  display: none; /* Göm alltid menyn som standard */
+  position: absolute;
+  top: 60px; /* Placera menyn under hamburgaren */
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0); /* Transparent bakgrund */
+  padding: 10px 20px;
+  z-index: 998; /* Under hamburgaren */
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menuOpen {
+  display: flex; /* Visa menyn när isMenuOpen är true */
 }
 
 .lidiv {
   font-size: 1.2rem;
-  font-weight: 600; /* Gör texten fetare */
-  margin-top: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px 0;
+  color: black; /* Svart text */
 }
 
-.navdiv {
-  color: #1e367d;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  height: 150px;
+.lidiv a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.uldiv {
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  gap: 90px;
-  margin-right: 100px;
-}
-/* Små mobiler */
-@media (max-width: 480px) {
-  .navdiv {
-    flex-direction: column;
-    height: auto;
-    padding: 10px 0;
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none; /* Dölj hamburgaren på större skärmar */
   }
 
   .uldiv {
-    flex-direction: column;
-    gap: 15px;
-    margin: 0;
+    display: flex; /* Gör menyn synlig på stora skärmar */
+    position: static;
+    flex-direction: row;
+    gap: 50px;
+    background: none; /* Ingen bakgrund */
+    padding: 0;
   }
 
-  .logo {
-    margin: 0;
-    width: 120px; /* Mindre logotyp */
+  .menuOpen {
+    display: flex; /* Undvik konflikter på stora skärmar */
   }
 }
-
-/* Tablets */
 @media (max-width: 768px) {
-  .navdiv {
-    padding: 15px 0;
-  }
-
   .uldiv {
-    gap: 30px;
+    top: 50px; /* Placera menyn närmare hamburgaren */
+    right: 10px; /* Anpassa till mindre skärmar */
+    width: auto; /* Låt menyn vara flexibel i bredd */
   }
 
-  .logo {
-    width: 150px;
+  .lidiv {
+    font-size: 0.9rem; /* Anpassa textstorleken */
+    padding: 5px 10px; /* Mer luft runt länkarna */
   }
 }

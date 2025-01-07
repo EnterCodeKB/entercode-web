@@ -154,3 +154,63 @@
     margin-top: 10px;
   }
 }
+@media (max-width: 480px) {
+  .div202 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .column {
+    text-align: left;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .div202 {
+    justify-content: center;
+    gap: 15px;
+  }
+  .column {
+    text-align: center;
+  }
+}
+
+/* Stora tablets (769px - 991px) */
+@media (min-width: 769px) and (max-width: 991px) {
+  .div202 {
+    justify-content: space-around;
+  }
+  .column {
+    min-width: 250px;
+  }
+}
+
+/* Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .div202 {
+    justify-content: space-between;
+    gap: 25px;
+  }
+  .column {
+    text-align: center;
+  }
+}
+
+/* Desktops (1200px - 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .div202 {
+    justify-content: space-evenly;
+    gap: 30px;
+  }
+}
+
+/* Ultrabreda skärmar (min-width: 1440px) */
+@media (min-width: 1440px) {
+  .div202 {
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .column {
+    min-width: 300px;
+  }
+}

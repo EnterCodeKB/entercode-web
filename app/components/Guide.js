@@ -43,7 +43,7 @@ export default function Guide() {
           </p>
         </div>
       </div>
-      <div className="text-container">
+      {/* <div className="text-container">
         <div className="ptext">
           <p>
             Erfarna utvecklare som bygger digitala mästerverk för företag i alla
@@ -53,7 +53,7 @@ export default function Guide() {
             onlineverklighet och strukturerad framgång.
           </p>
         </div>
-      </div>
+      </div>*/}
     </section>
   );
 }
