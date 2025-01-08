@@ -16,23 +16,31 @@ const KontaktSida = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Formulärdata skickas:", formData);
 
     try {
-      const response = await fetch("http://localhost:4000/api/kontakt", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://din-backend.up.railway.app/api/kontakt",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      console.log("Svar från servern:", response);
 
       if (response.ok) {
         alert("Din förfrågan har skickats!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("Något gick fel. Försök igen.");
+        const errorData = await response.json();
+        alert("Något gick fel: " + (errorData.error || "Försök igen."));
       }
     } catch (error) {
+      console.error("Fetch error:", error);
       alert("Ett fel inträffade: " + error.message);
     }
   };
