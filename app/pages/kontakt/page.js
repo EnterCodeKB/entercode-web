@@ -15,7 +15,6 @@ const KontaktSida = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Funktion för att hantera formulärinlämning
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Formulärdata skickas:", formData);
@@ -30,13 +29,17 @@ const KontaktSida = () => {
         }
       );
 
+      console.log("Svar från servern:", response);
+
       if (response.ok) {
+        const data = await response.json();
+        console.log("E-post skickad:", data);
         alert("Din förfrågan har skickats!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        const errorData = await response.text();
+        const errorData = await response.json();
         console.error("Serverfel:", errorData);
-        alert("Något gick fel: " + errorData);
+        alert("Något gick fel: " + errorData.error);
       }
     } catch (error) {
       console.error("Fetch error:", error);

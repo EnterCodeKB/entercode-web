@@ -5,9 +5,25 @@ require("dotenv").config();
 
 const app = express();
 
-// Middleware
+// Lista över tillåtna origins
+const allowedOrigins = [
+  "http://localhost:3000", // Lokal utveckling
+  "https://entercode-production.up.railway.app", // Produktions-URL för frontend
+];
+
+// Middleware för JSON och CORS
 app.use(express.json());
-app.use(cors({ origin: "https://entercode-production.up.railway.app" }));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Ej tillåtet ursprung"));
+      }
+    },
+  })
+);
 
 // API Endpoint
 app.post("/api/kontakt", async (req, res) => {
@@ -28,7 +44,8 @@ app.post("/api/kontakt", async (req, res) => {
       },
     });
 
-    transporter.verify((error, success) => {
+    // Verifiera SMTP-konfiguration
+    transporter.verify((error) => {
       if (error) {
         console.log("SMTP-fel:", error);
       } else {
@@ -36,6 +53,7 @@ app.post("/api/kontakt", async (req, res) => {
       }
     });
 
+    // E-postkonfiguration
     const mailOptions = {
       from: process.env.EMAIL_USER,
       replyTo: email,
@@ -44,8 +62,9 @@ app.post("/api/kontakt", async (req, res) => {
       text: `Meddelande från ${name} (${email}):\n\n${message}`,
     };
 
+    // Skicka e-post
     await transporter.sendMail(mailOptions);
-    res.status(200).send("E-post skickad!");
+    res.status(200).json({ message: "E-post skickad!" });
   } catch (error) {
     console.error("E-postfel:", error.message);
     res
