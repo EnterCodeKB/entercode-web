@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({ origin: "https://din-frontend-url.com" }));
+app.use(cors({ origin: "https://entercode-production.up.railway.app" }));
 
 // API Endpoint
 app.post("/api/kontakt", async (req, res) => {
