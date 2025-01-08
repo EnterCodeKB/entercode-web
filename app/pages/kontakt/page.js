@@ -20,7 +20,7 @@ const KontaktSida = () => {
 
     try {
       const response = await fetch(
-        "https://din-backend.up.railway.app/api/kontakt",
+        "https://entercode-production.up.railway.app/api/kontakt",
         {
           method: "POST",
           headers: {

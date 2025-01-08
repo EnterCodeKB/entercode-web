@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://din-frontend-url.com" }));
 
 // API Endpoint
 app.post("/api/kontakt", async (req, res) => {
@@ -26,6 +26,14 @@ app.post("/api/kontakt", async (req, res) => {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+    });
+
+    transporter.verify((error, success) => {
+      if (error) {
+        console.log("SMTP-fel:", error);
+      } else {
+        console.log("SMTP-anslutning fungerade!");
+      }
     });
 
     const mailOptions = {
