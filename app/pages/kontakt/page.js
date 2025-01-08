@@ -15,9 +15,17 @@ const KontaktSida = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Formulärdata skickas:", formData);
+
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Alla fält måste fyllas i.");
+      return;
+    }
+
+    setIsLoading(true); // Visa laddningsindikator
 
     try {
       const response = await fetch(
@@ -29,21 +37,21 @@ const KontaktSida = () => {
         }
       );
 
-      console.log("Svar från servern:", response);
-
       if (response.ok) {
         const data = await response.json();
         console.log("E-post skickad:", data);
         alert("Din förfrågan har skickats!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        const errorData = await response.json();
+        const errorData = await response.text();
         console.error("Serverfel:", errorData);
-        alert("Något gick fel: " + errorData.error);
+        alert("Något gick fel: " + errorData);
       }
     } catch (error) {
       console.error("Fetch error:", error);
       alert("Ett fel inträffade: " + error.message);
+    } finally {
+      setIsLoading(false); // Dölj laddningsindikator
     }
   };
 
@@ -65,12 +73,13 @@ const KontaktSida = () => {
         <div className={styles.inputGroup}>
           <label htmlFor="email">E-post</label>
           <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Din e-postadress"
-            value={formData.email}
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ditt namn"
+            value={formData.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div className={styles.inputGroup}>
