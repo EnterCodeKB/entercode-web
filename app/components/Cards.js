@@ -31,7 +31,7 @@ export default function Card() {
               </div>
             </div>
 
-            {/*andra bild getting */}
+            {/*andra bild  */}
             <div className={styles.column4}>
               <div className={styles.div49}>
                 <div className={styles.imgContainer}>
@@ -57,7 +57,7 @@ export default function Card() {
               </div>
             </div>
 
-            {/*tredje bild hund och katt */}
+            {/*tredje bild */}
             <div className={styles.column5}>
               <div className={styles.div52}>
                 <div className={styles.imgContainer}>

@@ -13,20 +13,7 @@
 
   font: 600 38px/57px Poppins, -apple-system, Roboto, Helvetica, sans-serif;
 }
-@media (max-width: 991px) {
-  .div43 {
-    max-width: 50%;
-    margin-top: 40px;
-  }
-}
-@media (max-width: 768px) {
-  .div43 {
-    max-width: 30%;
-    margin-top: 20px;
-    margin-left: 1%;
-    margin-bottom: 10px;
-  }
-}
+
 .div44 {
   align-self: center;
   margin-top: 67px;
@@ -35,35 +22,9 @@
   max-width: 1400px;
   padding: 0 50px;
 }
-@media (max-width: 991px) {
-  .div44 {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-}
-@media (max-width: 768px) {
-  .div44 {
-    max-width: 80%;
-    margin-top: 40px;
-  }
-}
 .div45 {
   gap: 20px;
   display: flex;
-}
-@media (max-width: 991px) {
-  .div45 {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
-}
-@media (max-width: 768px) {
-  .div45 {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0px;
-  }
 }
 .column3 {
   display: flex;
@@ -71,18 +32,6 @@
   width: 33%;
   margin-left: 0;
 }
-
-@media (max-width: 991px) {
-  .column3 {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .column3 {
-    width: 80%;
-  }
-}
-
 .div46 {
   background-color: var(--Grey, #f4f6fc);
   display: flex;
@@ -92,20 +41,6 @@
   padding: 0; /* Adjust padding as needed */
   position: relative; /* Ensure positioning context for the overlay */
 }
-
-@media (max-width: 991px) {
-  .div46 {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-}
-@media (max-width: 768px) {
-  .div46 {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-}
-
 .imgContainer {
   position: relative;
   width: 100%;
@@ -171,20 +106,6 @@
   width: 33%;
   margin-left: 20px;
 }
-
-@media (max-width: 991px) {
-  .column4 {
-    width: 100%;
-    margin-left: 0; /* Lägg till detta om du vill att marginalen ska tas bort på mindre skärmar */
-  }
-}
-@media (max-width: 768px) {
-  .column4 {
-    width: 80%;
-    margin-left: 0; /* Ta bort marginalen på mindre skärmar */
-  }
-}
-
 .div49 {
   background-color: var(--Grey, #f4f6fc);
   display: flex;
@@ -193,19 +114,6 @@
   width: 100%; /* Justera till 100% för att fylla tillgängligt utrymme */
   padding: 0; /* Ta bort padding så att overlay fyller hela container */
   position: relative; /* Ställ in relativ position för overlay */
-}
-
-@media (max-width: 991px) {
-  .div49 {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-}
-@media (max-width: 768px) {
-  .div49 {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
 }
 
 .imgContainer {
@@ -250,20 +158,6 @@
   width: 33%;
   margin-left: 20px;
 }
-
-@media (max-width: 991px) {
-  .column5 {
-    width: 100%;
-    margin-left: 0; /* Ta bort marginalen på mindre skärmar */
-  }
-}
-@media (max-width: 768px) {
-  .column5 {
-    width: 80%;
-    margin-left: 0; /* Ta bort marginalen på mindre skärmar */
-  }
-}
-
 .div52 {
   background-color: var(--Grey, #f4f6fc);
   display: flex;
@@ -274,18 +168,6 @@
   position: relative; /* Nödvändigt för att overlay ska vara korrekt positionerad */
 }
 
-@media (max-width: 991px) {
-  .div52 {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-}
-@media (max-width: 768px) {
-  .div52 {
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-}
 .imgContainer {
   position: relative;
   width: 100%;
@@ -335,4 +217,102 @@
   margin-top: 10px; /* Justera marginalen för avstånd */
   width: 80%;
   font: 400 16px/28px Poppins, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+
+
+/*KLISTRA IN*/
+
+@media (max-width: 991px) {
+  .div43 {
+    max-width: 80%;
+    margin-top: 40px;
+  }
+  .div44 {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+  .div45 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+  .column3 {
+    width: 100%;
+  }
+  .div46 {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .column4 {
+    width: 100%;
+    margin-left: 0; /* Lägg till detta om du vill att marginalen ska tas bort på mindre skärmar */
+  }
+  .div52 {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .column5 {
+    width: 100%;
+    margin-left: 0; /* Ta bort marginalen på mindre skärmar */
+  }
+  .div49 {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 768px) {
+  .div43 {
+    max-width: 80%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: -50px; 
+
+  }
+  .div44 {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-left: -1px; 
+
+  }
+  .div52 {
+    margin-top: 40px;
+    background-color: unset; /* Eller inherit */
+  }
+
+  .column3 {
+    width: 100%;
+    margin-right: 50; 
+
+  }
+  .column4 {
+    width: 100%;
+    background-color: none;
+    margin-right: 50; 
+    }
+
+  .column5 {
+    width: 100%;
+    background-color: none;
+    }
+
+  .div49 {
+    margin-top: 40px;
+    background-color: unset; /* Eller inherit */
+  }
+  
+  .div46 {
+    margin-top: 40px;
+    background-color: unset; /* Eller inherit */
+  }
+  
+  .div45 {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+
+  .img{
+    width: 100%;
+  }
 }
