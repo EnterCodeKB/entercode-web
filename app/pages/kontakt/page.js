@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
 
-
 const KontaktSida = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -39,6 +38,7 @@ const KontaktSida = () => {
   // Hanterar formulärinlämning
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL); // Kontrollera att variabeln laddas korrekt
 
     if (!isFormValid()) return;
 
@@ -69,7 +69,7 @@ const KontaktSida = () => {
     } finally {
       setIsLoading(false);
     }
-  };  
+  };
 
   return (
     <div className={styles.container}>
