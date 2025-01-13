@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
 
+
 const KontaktSida = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,42 +13,59 @@ const KontaktSida = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  // Funktion för att hantera förändringar i input-fält
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  // Hanterar förändringar i formuläret
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Hantera formulärinlämning
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.message) {
+  // Validerar formuläret
+  const isFormValid = () => {
+    const { name, email, message } = formData;
+    if (!name || !email || !message) {
       alert("Alla fält måste fyllas i.");
-      return;
+      return false;
     }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Ange en giltig e-postadress.");
+      return false;
+    }
+
+    return true;
+  };
+
+  // Hanterar formulärinlämning
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!isFormValid()) return;
 
     setIsLoading(true);
 
     try {
       const response = await fetch(
-        process.env.NEXT_PUBLIC_API_URL + "/api/kontakt",
+        `${process.env.NEXT_PUBLIC_API_URL}/api/kontakt`,
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify(formData),
         }
       );
 
-      if (response.ok) {
-        const data = await response.json();
-        alert("Din förfrågan har skickats!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const errorData = await response.text();
-        alert("Något gick fel: " + errorData);
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(errorMessage || "Ett oväntat fel inträffade.");
       }
+
+      alert("Din förfrågan har skickats!");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      alert("Ett fel inträffade: " + error.message);
+      console.error("Ett fel inträffade:", error.message);
+      alert(`Något gick fel: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
