@@ -5,6 +5,8 @@ import "./globals.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Navbar";
 import BackgroundWrapper from "./components/BackgroundWrapper";
+import CookieBanner from "./components/CookieBanner"; // Anpassa sökvägen
+
 
 export default function RootLayout({ children }) {
   return (
@@ -28,7 +30,12 @@ export default function RootLayout({ children }) {
       <body>
         <BackgroundWrapper>
           <Nav />
-          <main className="relative">{children}</main>
+          <CookieBanner /> {/* Placera CookieBanner här för att visa den högst upp */}
+
+          <main className="relative">{children}
+          
+</main>
+
         </BackgroundWrapper>
         <Footer />
       </body>

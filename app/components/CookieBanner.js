@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/CookieBanner.module.css";
 
+
+
 const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -18,29 +20,29 @@ const CookieBanner = () => {
     // Spara användarens val
     localStorage.setItem("cookiePreference", "all");
     setIsVisible(false);
+    console.log("Alla cookies är accepterade!");
   };
 
   const handleAcceptNecessary = () => {
     // Spara användarens val
     localStorage.setItem("cookiePreference", "necessary");
     setIsVisible(false);
+    console.log("Endast nödvändiga cookies är accepterade!");
   };
 
-  if (!isVisible) return null; // Visa inte bannern om användaren redan valt
+  if (!isVisible) return null; // Om bannern inte ska visas, returnera ingenting
 
   return (
     <div className={styles.banner}>
       <p>
-        Vi använder cookies för att förbättra din upplevelse. Genom att klicka på
-        "Acceptera alla" godkänner du alla cookies, eller så kan du välja att bara
-        acceptera nödvändiga cookies.
+        Vi använder cookies för att förbättra din upplevelse. Klicka på "Acceptera alla" för att godkänna alla cookies, eller välj "Endast nödvändiga" för att begränsa cookies.
       </p>
       <div className={styles.buttons}>
         <button onClick={handleAcceptAll} className={styles.acceptAll}>
           Acceptera alla
         </button>
         <button onClick={handleAcceptNecessary} className={styles.acceptNecessary}>
-          Acceptera endast nödvändiga
+          Endast nödvändiga
         </button>
       </div>
     </div>
