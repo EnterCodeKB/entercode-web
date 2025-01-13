@@ -79,6 +79,9 @@
 
   .h1box {
     font-size: 1.2rem;
+    width: 90%;
+    text-align: center;
+    margin-left: 80px;
   }
 
   .rotatedimg {
@@ -87,12 +90,20 @@
 
   .textcontainer {
     font-size: 0.9rem;
+    text-align: center;
+
   }
 
   .visiondiv h2 {
-    font-size: 1rem;
-  }
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
 
+  }
+  .visioncontainer{
+    margin-left: 50px;
+    margin-top: -120px
+  }
   .visiontext {
     font-size: 0.9rem;
   }
@@ -113,8 +124,8 @@
 
   .a4container{
     margin-top:1000px;
-    margin-left:-150px;
-    width: 80%;
+    margin-left:-50px;
+    width: 100%;
   }
 }
 
