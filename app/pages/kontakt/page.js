@@ -10,6 +10,7 @@ const KontaktSida = () => {
     message: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   // Hanterar förändringar i formuläret
@@ -38,34 +39,29 @@ const KontaktSida = () => {
   // Hanterar formulärinlämning
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("API URL:", process.env.NEXT_PUBLIC_API_URL); // Kontrollera att variabeln laddas korrekt
 
     if (!isFormValid()) return;
 
     setIsLoading(true);
 
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/kontakt`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("https://formspree.io/f/mannvbln", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage || "Ett oväntat fel inträffade.");
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Något gick fel. Försök igen senare.");
       }
-
-      alert("Din förfrågan har skickats!");
-      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Ett fel inträffade:", error.message);
-      alert(`Något gick fel: ${error.message}`);
+      alert("Ett fel inträffade. Försök igen senare.");
     } finally {
       setIsLoading(false);
     }
@@ -74,51 +70,57 @@ const KontaktSida = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Kontakta oss</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.inputGroup}>
-          <label htmlFor="name">Namn</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Ditt namn"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="email">E-post</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Din e-post"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="message">Meddelande</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Ditt meddelande"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          className={styles.inputButton}
-          disabled={isLoading}
-        >
-          {isLoading ? "Skickar..." : "Skicka"}
-        </button>
-      </form>
+      {isSubmitted ? (
+        <p className={styles.successMessage}>
+          Tack! Din förfrågan har skickats.
+        </p>
+      ) : (
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.inputGroup}>
+            <label htmlFor="name">Namn</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ditt namn"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="email">E-post</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Din e-post"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="message">Meddelande</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Ditt meddelande"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className={styles.inputButton}
+            disabled={isLoading}
+          >
+            {isLoading ? "Skickar..." : "Skicka"}
+          </button>
+        </form>
+      )}
     </div>
   );
 };
