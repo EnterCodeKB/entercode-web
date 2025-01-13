@@ -1,4 +1,8 @@
-import styles from "../styles/CookiePolicy.module.css";
+"use client";
+
+import styles from "../styles/CookiePolicy.module.css"
+import CookieBanner from "../components/CookieBanner"; // Anpassa sökvägen
+;
 
 export default function CookiePolicy() {
   return (
@@ -38,14 +42,11 @@ export default function CookiePolicy() {
       </p>
 
       <h2>3. Hur vi använder cookies</h2>
-      <p>
-        Vi använder cookies för att:
-        <ul>
-          <li>Förbättra webbplatsens prestanda.</li>
-          <li>Analysera trafik och beteendemönster.</li>
-          <li>Anpassa innehåll och annonser.</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Förbättra webbplatsens prestanda.</li>
+        <li>Analysera trafik och beteendemönster.</li>
+        <li>Anpassa innehåll och annonser.</li>
+      </ul>
 
       <h2>4. Tredjepartscookies</h2>
       <p>
@@ -74,7 +75,7 @@ export default function CookiePolicy() {
         <br />
         EnterCode Sweden KB
         <br />
-        E-post: <a href="info@entercode.se">info@entercode.se</a>
+        E-post: <a href="mailto:info@entercode.se">info@entercode.se</a>
         <br />
         Telefon: 070-267 38 85
       </p>
