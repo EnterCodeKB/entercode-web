@@ -12,7 +12,6 @@ const allowedOrigins = [
   "https://entercode-production.up.railway.app", // Railway
 ];
 
-
 // Middleware för JSON och CORS
 app.use(express.json());
 app.use(

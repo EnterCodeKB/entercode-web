@@ -69,7 +69,7 @@ const KontaktSida = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  };  
 
   return (
     <div className={styles.container}>
