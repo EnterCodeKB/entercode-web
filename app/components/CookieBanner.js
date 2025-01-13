@@ -58,22 +58,17 @@ export default function CookieBanner() {
             </a>.
           </p>
           <div className={styles.actions}>
-            <button onClick={handleAcceptAll} className={styles.primaryButton}>
-              Godkänn alla
-            </button>
-            <button
-              onClick={handleShowPreferences}
-              className={styles.secondaryButton}
-            >
-              Anpassa
-            </button>
-            <button
-              onClick={handleAcceptEssential}
-              className={styles.secondaryButton}
-            >
-              Bara nödvändiga
-            </button>
-          </div>
+  <button onClick={handleAcceptAll} className={styles.primaryButton}>
+    Godkänn alla
+  </button>
+  <button onClick={handleShowPreferences} className={styles.secondaryButton}>
+    Anpassa
+  </button>
+  <button onClick={handleAcceptEssential} className={styles.secondaryButton}>
+    Bara nödvändiga
+  </button>
+</div>
+
         </div>
       )}
 
