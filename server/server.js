@@ -45,13 +45,7 @@ app.post("/api/kontakt", async (req, res) => {
     });
 
     // Verifiera SMTP-konfiguration
-    transporter.verify((error) => {
-      if (error) {
-        console.log("SMTP-fel:", error);
-      } else {
-        console.log("SMTP-anslutning fungerade!");
-      }
-    });
+    await transporter.verify();
 
     // E-postkonfiguration
     const mailOptions = {
@@ -73,8 +67,14 @@ app.post("/api/kontakt", async (req, res) => {
   }
 });
 
+// Felhanterings-middleware (ska vara sist)
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Ett internt serverfel inträffade." });
+});
+
 // Starta servern
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Servern körs på http://localhost:${PORT}`);
 });
