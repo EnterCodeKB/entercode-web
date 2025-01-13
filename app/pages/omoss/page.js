@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./omoss.module.css";
-import Cards from "../../components/FourCards";
+import FourCards from "../../components/FourCards";
 
 export default function Work() {
   return (
@@ -16,7 +16,7 @@ export default function Work() {
           />
         </div>
         <div className={styles.cardscontainer}>
-          <Cards />
+          <FourCards />
         </div>
       </div>
       <div className={styles.a4container}>

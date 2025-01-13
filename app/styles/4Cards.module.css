@@ -49,3 +49,19 @@
   -webkit-box-orient: vertical; /* Vertikal orientering för box */
   word-wrap: break-word; /* Tillåt brytning av långa ord */
 }
+@media (max-width: 480px) {
+}
+@media (max-width: 768px) {
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  
+}
+@media (max-width: 991px) {
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 1439px) {
+}
