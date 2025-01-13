@@ -10,13 +10,14 @@ const KontaktSida = () => {
     message: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   // Funktion för att hantera förändringar i input-fält
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const [isLoading, setIsLoading] = useState(false);
-
+  // Hantera formulärinlämning
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,11 +26,11 @@ const KontaktSida = () => {
       return;
     }
 
-    setIsLoading(true); // Visa laddningsindikator
+    setIsLoading(true);
 
     try {
       const response = await fetch(
-        "https://entercode-production.up.railway.app/api/kontakt",
+        process.env.NEXT_PUBLIC_API_URL + "/api/kontakt",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -39,19 +40,16 @@ const KontaktSida = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("E-post skickad:", data);
         alert("Din förfrågan har skickats!");
         setFormData({ name: "", email: "", message: "" });
       } else {
         const errorData = await response.text();
-        console.error("Serverfel:", errorData);
         alert("Något gick fel: " + errorData);
       }
     } catch (error) {
-      console.error("Fetch error:", error);
       alert("Ett fel inträffade: " + error.message);
     } finally {
-      setIsLoading(false); // Dölj laddningsindikator
+      setIsLoading(false);
     }
   };
 
@@ -68,16 +66,17 @@ const KontaktSida = () => {
             placeholder="Ditt namn"
             value={formData.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div className={styles.inputGroup}>
           <label htmlFor="email">E-post</label>
           <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Ditt namn"
-            value={formData.name}
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Din e-post"
+            value={formData.email}
             onChange={handleChange}
             required
           />
@@ -91,10 +90,15 @@ const KontaktSida = () => {
             placeholder="Ditt meddelande"
             value={formData.message}
             onChange={handleChange}
+            required
           ></textarea>
         </div>
-        <button type="submit" className={styles.inputButton}>
-          Skicka
+        <button
+          type="submit"
+          className={styles.inputButton}
+          disabled={isLoading}
+        >
+          {isLoading ? "Skickar..." : "Skicka"}
         </button>
       </form>
     </div>

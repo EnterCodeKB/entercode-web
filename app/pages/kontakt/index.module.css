@@ -16,6 +16,11 @@
   text-align: center;
   color: #333;
 }
+.inputButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 
 .description {
   text-align: center;
