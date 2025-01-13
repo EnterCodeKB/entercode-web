@@ -26,11 +26,7 @@ export default function Guide() {
 
   return (
     <section className="section">
-      <div className="images-container">
-        <img className="imgspel img1" src="/pc7.png" alt="PC" />
-        <img className="imgspel img2" src="/laptop11.png" alt="Laptop" />
-        <img className="imgspel img3" src="/laptopomobill11.png" alt="Mobil" />
-      </div>
+     
       <div className="övertext-container">
         <div className="övertextdiv  ">
           <p>
@@ -54,6 +50,11 @@ export default function Guide() {
           </p>
         </div>
       </div>*/}
+       <div className="images-container">
+        <img className="imgspel img1" src="/pc7.png" alt="PC" />
+        <img className="imgspel img2" src="/laptop11.png" alt="Laptop" />
+        <img className="imgspel img3" src="/laptopomobill11.png" alt="Mobil" />
+      </div>
     </section>
   );
 }

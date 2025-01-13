@@ -1,18 +1,21 @@
 .section {
   width: 100%;
   max-width: 1400px;
-  height: 800px;
+  height: auto;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .övertext-container {
-  width: 150%;
+  width: 100%;
   margin-top: 100px;
-
-  margin-right: 160px;
 }
 .övertextdiv {
+  width: 80%;
+margin-left: 200px;
   font-size: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -23,12 +26,13 @@
 
 .images-container {
   position: relative;
-  width: 50%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 400px;
-  margin-left: 100px;
+  margin-top: 200px;
+  margin-bottom: 360px;
+  margin-left:
 }
 
 .imgspel {
@@ -70,7 +74,6 @@
 
 .text-container {
   position: absolute;
-  bottom: -50px;
   right: 70px;
   animation: slideUp 1.5s ease-out forwards;
   opacity: 0;
