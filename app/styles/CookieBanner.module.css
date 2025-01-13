@@ -1,71 +1,96 @@
-.alert {
+/* Banner Style */
+.banner {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #2e2e2e;
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
   max-width: 90%;
+  width: 600px;
+  z-index: 1000;
   text-align: center;
 }
 
-.text {
-  margin: 0 0 15px 0;
-  font-size: 16px;
+.banner p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
   line-height: 1.5;
-  color: #ffffff;
 }
 
 .link {
-  color: #00aaff;
+  color: #007bff;
   text-decoration: underline;
 }
 
-.buttonGroup {
+.actions {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
-.button {
-  background-color: #00aaff;
+/* Buttons */
+.primaryButton {
+  background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.primaryButton:hover {
+  background-color: #0056b3;
+}
+
+.secondaryButton {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: #e1e1e1;
+}
+
+/* Modal Style */
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  padding: 30px;
-  border-radius: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
-  text-align: center;
+  padding: 2rem;
   max-width: 400px;
   width: 90%;
+  z-index: 1001;
+  text-align: center;
 }
 
-.modalTitle {
-  margin: 0 0 20px;
-  font-size: 20px;
-  font-weight: bold;
+.modal h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
   color: #333;
 }
 
-.modalText {
-  margin: 0 0 15px;
-  font-size: 16px;
+.modal p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
   color: #555;
 }
 
@@ -73,12 +98,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .label {
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 1rem;
   color: #333;
   display: flex;
   align-items: center;

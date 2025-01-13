@@ -8,8 +8,8 @@ export default function CookieBanner() {
   const [showPreferences, setShowPreferences] = useState(false);
   const [preferences, setPreferences] = useState({
     essential: true,
-    analytics: true,
-    marketing: true,
+    analytics: false,
+    marketing: false,
   });
 
   useEffect(() => {
@@ -20,12 +20,14 @@ export default function CookieBanner() {
   }, []);
 
   const handleAcceptAll = () => {
-    localStorage.setItem("cookieConsent", JSON.stringify(preferences));
+    const consent = { essential: true, analytics: true, marketing: true };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
     setShowBanner(false);
   };
 
   const handleAcceptEssential = () => {
-    localStorage.setItem("cookieConsent", JSON.stringify({ essential: true }));
+    const consent = { essential: true };
+    localStorage.setItem("cookieConsent", JSON.stringify(consent));
     setShowBanner(false);
   };
 
@@ -46,24 +48,29 @@ export default function CookieBanner() {
   return (
     <>
       {showBanner && (
-        <div className={styles.alert}>
-          <p className={styles.text}>
-            Den här webbplatsen använder cookies för att förbättra
-            användarupplevelsen. Genom att fortsätta använda vår webbplats
-            godkänner du användningen av cookies i enlighet med vår{" "}
+        <div className={styles.banner}>
+          <p>
+            Vi använder cookies för att förbättra din upplevelse. Klicka på
+            "Godkänn alla" för att acceptera alla cookies eller välj
+            "Anpassa" för att göra dina val. Läs mer i vår{" "}
             <a href="/privacy-policy" className={styles.link}>
               integritetspolicy
-            </a>
-            .
+            </a>.
           </p>
-          <div className={styles.buttonGroup}>
-            <button onClick={handleAcceptAll} className={styles.button}>
+          <div className={styles.actions}>
+            <button onClick={handleAcceptAll} className={styles.primaryButton}>
               Godkänn alla
             </button>
-            <button onClick={handleShowPreferences} className={styles.button}>
+            <button
+              onClick={handleShowPreferences}
+              className={styles.secondaryButton}
+            >
               Anpassa
             </button>
-            <button onClick={handleAcceptEssential} className={styles.button}>
+            <button
+              onClick={handleAcceptEssential}
+              className={styles.secondaryButton}
+            >
               Bara nödvändiga
             </button>
           </div>
@@ -72,10 +79,8 @@ export default function CookieBanner() {
 
       {showPreferences && (
         <div className={styles.modal}>
-          <h2 className={styles.modalTitle}>Cookie-inställningar</h2>
-          <p className={styles.modalText}>
-            Välj vilka typer av cookies du vill tillåta:
-          </p>
+          <h2>Cookie-inställningar</h2>
+          <p>Välj vilka typer av cookies du vill tillåta:</p>
           <div className={styles.checkboxGroup}>
             <label className={styles.label}>
               <input type="checkbox" checked={preferences.essential} disabled />
@@ -98,9 +103,11 @@ export default function CookieBanner() {
               Marknadsföringscookies
             </label>
           </div>
-          <button onClick={handleSavePreferences} className={styles.button}>
-            Spara val
-          </button>
+          <div className={styles.actions}>
+            <button onClick={handleSavePreferences} className={styles.primaryButton}>
+              Spara val
+            </button>
+          </div>
         </div>
       )}
     </>
