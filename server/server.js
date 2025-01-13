@@ -8,8 +8,10 @@ const app = express();
 // Lista över tillåtna origins
 const allowedOrigins = [
   "http://localhost:3000", // Lokal utveckling
-  "https://entercode-production.up.railway.app", // Produktions-URL för frontend
+  "https://entercode.se", // Produktionsdomän
+  "https://entercode-production.up.railway.app", // Railway
 ];
+
 
 // Middleware för JSON och CORS
 app.use(express.json());
@@ -73,8 +75,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Ett internt serverfel inträffade." });
 });
 
-// Starta servern
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Servern körs på http://localhost:${PORT}`);
 });
