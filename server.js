@@ -5,18 +5,18 @@ require("dotenv").config();
 
 const app = express();
 
-// Lista över tillåtna origins
+// Lista över tillåtna ursprung (CORS-konfiguration)
 const allowedOrigins = [
   "http://localhost:3000", // Lokal utveckling
-  "https://entercode.se", // Produktionsdomän
+  "https://entercode.se", // Produktions-URL
   "https://entercode-production.up.railway.app", // Railway
 ];
 
-// Middleware för JSON och CORS
+// Middleware för att hantera JSON och CORS
 app.use(express.json());
 app.use(
   cors({
-    origin: function (origin, callback) {
+    origin: (origin, callback) => {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -26,7 +26,7 @@ app.use(
   })
 );
 
-// API Endpoint
+// API Endpoint för att hantera kontaktformulär
 app.post("/api/kontakt", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -35,20 +35,21 @@ app.post("/api/kontakt", async (req, res) => {
   }
 
   try {
+    // Skapa en transporter för Nodemailer
     const transporter = nodemailer.createTransport({
-      host: "mailcluster.loopia.se",
-      port: 587,
-      secure: false,
+      host: "mailcluster.loopia.se", // Din SMTP-server
+      port: 587, // Port för e-posttjänsten
+      secure: false, // Använd `true` för port 465, annars `false`
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, // Från .env
+        pass: process.env.EMAIL_PASS, // Från .env
       },
     });
 
     // Verifiera SMTP-konfiguration
     await transporter.verify();
 
-    // E-postkonfiguration
+    // Konfiguration för e-post
     const mailOptions = {
       from: process.env.EMAIL_USER,
       replyTo: email,
@@ -74,6 +75,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Ett internt serverfel inträffade." });
 });
 
+// Starta servern på rätt port
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Servern körs på http://localhost:${PORT}`);
