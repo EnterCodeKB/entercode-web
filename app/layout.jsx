@@ -7,13 +7,12 @@ import Nav from "./components/Navbar";
 import BackgroundWrapper from "./components/BackgroundWrapper";
 import CookieBanner from "./components/CookieBanner"; // Anpassa sökvägen
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
         <title>EnterCode Sweden KB</title>
-        <meta name="description" content="Description of your page" />
+        <meta name="Webbdesign" content="Webbdesign" />
 
         {/* Lägg till Montserrat-fonten från Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,12 +29,9 @@ export default function RootLayout({ children }) {
       <body>
         <BackgroundWrapper>
           <Nav />
-          <CookieBanner /> {/* Placera CookieBanner här för att visa den högst upp */}
-
-          <main className="relative">{children}
-          
-</main>
-
+          <CookieBanner />{" "}
+          {/* Placera CookieBanner här för att visa den högst upp */}
+          <main className="relative">{children}</main>
         </BackgroundWrapper>
         <Footer />
       </body>

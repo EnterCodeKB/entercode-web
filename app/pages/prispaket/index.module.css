@@ -1,0 +1,65 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #2c2c2c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0057b8;
+  margin: 1rem 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  color: #666;
+}
+
+.features li {
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: #0057b8;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #004094;
+}

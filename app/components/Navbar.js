@@ -2,10 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import styles from "../styles/Navbar.module.css";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -34,14 +36,38 @@ export default function Navbar() {
           className={`${styles.uldiv} ${isMenuOpen ? styles.menuOpen : ""}`}
           onClick={() => setIsMenuOpen(false)}
         >
-          <li className={styles.lidiv}>
+          <li
+            className={`${styles.lidiv} ${
+              pathname === "/" ? styles.active : ""
+            }`}
+          >
             <Link href="/">HEM</Link>
           </li>
-          <li className={styles.lidiv}>
+
+          <li
+            className={`${styles.lidiv} ${
+              pathname === "/pages/omoss" ? styles.active : ""
+            }`}
+          >
             <Link href="/pages/omoss">OM OSS</Link>
           </li>
-          <li className={styles.lidiv}>
+
+          <li
+            className={`${styles.lidiv} ${
+              pathname === "/pages/kontakt" ? styles.active : ""
+            }`}
+          >
+            {" "}
             <Link href="/pages/kontakt">KONTAKT</Link>
+          </li>
+
+          <li
+            className={`${styles.lidiv} ${
+              pathname === "/pages/prispaket" ? styles.active : ""
+            }`}
+          >
+            {" "}
+            <Link href="/pages/prispaket">PRISPAKET</Link>
           </li>
         </ul>
       </div>
