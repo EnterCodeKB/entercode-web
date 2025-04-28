@@ -15,8 +15,11 @@ export default function Prispaket() {
             <li>Grundläggande SEO</li>
             <li>Kontaktformulär</li>
           </ul>
-          <Link href="/kontakt" className={styles.button}>
-            Kontakta oss
+          <Link
+            href="/pages/kontakt?paket=startpaket"
+            className={styles.button}
+          >
+            Kontakta mig
           </Link>
         </div>
 
@@ -29,7 +32,10 @@ export default function Prispaket() {
             <li>Anpassad design</li>
             <li>Google Analytics</li>
           </ul>
-          <Link href="/kontakt" className={styles.button}>
+          <Link
+            href="/pages/kontakt?paket=foretagspaket"
+            className={styles.button}
+          >
             Boka möte
           </Link>
         </div>
@@ -43,7 +49,10 @@ export default function Prispaket() {
             <li>Headless CMS</li>
             <li>Teknisk SEO och prestandaoptimering</li>
           </ul>
-          <Link href="/kontakt" className={styles.button}>
+          <Link
+            href="/pages/kontakt?paket=premiumpaket"
+            className={styles.button}
+          >
             Diskutera projekt
           </Link>
         </div>

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: transparent; /* Transparent navbar */
+  background-color: rgba(255, 255, 255, 0);
   position: relative;
 }
 
@@ -46,32 +46,67 @@
 
 .uldiv {
   list-style: none;
-  display: none; /* Göm alltid menyn som standard */
+  display: none;
   position: absolute;
-  top: 60px; /* Placera menyn under hamburgaren */
+  top: 60px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0); /* Transparent bakgrund */
+  background-color: transparent;
   padding: 10px 20px;
-  z-index: 998; /* Under hamburgaren */
+  z-index: 998;
   flex-direction: column;
   gap: 10px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .menuOpen {
-  display: flex; /* Visa menyn när isMenuOpen är true */
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .lidiv {
+  position: relative;
   font-size: 1.2rem;
   font-weight: 600;
   text-transform: uppercase;
   padding: 5px 0;
-  color: black; /* Svart text */
+  color: black;
+  cursor: pointer;
 }
 
 .lidiv a {
   text-decoration: none;
   color: inherit;
+  position: relative;
+  display: inline-block;
+  padding: 5px 0;
+}
+
+.lidiv a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  background-color: #0057b8;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  transform-origin: center;
+}
+
+.lidiv a:hover::after {
+  width: 100%;
+}
+
+/* Aktiv länk */
+.active a::after {
+  width: 100%;
+}
+.active {
+  color: #0057b8;
 }
 
 @media (min-width: 1024px) {
@@ -80,12 +115,14 @@
   }
 
   .uldiv {
-    display: flex; /* Gör menyn synlig på stora skärmar */
+    display: flex;
     position: static;
     flex-direction: row;
     gap: 50px;
-    background: none; /* Ingen bakgrund */
+    background: none;
     padding: 0;
+    opacity: 1; /* <--- NY! */
+    transform: translateY(0); /* <--- NY! */
   }
 
   .menuOpen {

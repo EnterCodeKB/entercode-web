@@ -2,10 +2,25 @@
 
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { useSearchParams } from "next/navigation";
 import styles from "./index.module.css";
 
 const KontaktSida = () => {
   const [state, handleSubmit] = useForm("mannvbln");
+  const searchParams = useSearchParams();
+  const paket = searchParams.get("paket");
+  const formatPackageName = (paket) => {
+    switch (paket) {
+      case "startpaket":
+        return "Startpaket";
+      case "foretagspaket":
+        return "Företagspaket";
+      case "premiumpaket":
+        return "Premiumpaket";
+      default:
+        return "";
+    }
+  };
 
   if (state.succeeded) {
     return (
@@ -42,6 +57,35 @@ const KontaktSida = () => {
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="package">Paket</label>
+          {paket ? (
+            <input
+              id="package"
+              type="text"
+              name="package"
+              value={formatPackageName(paket)}
+              readOnly
+              placeholder="Valt paket"
+            />
+          ) : (
+            <select
+              id="package"
+              name="package"
+              required
+              defaultValue=""
+              className={styles.selectInput}
+            >
+              <option value="" disabled>
+                Välj ett paket
+              </option>
+              <option value="Startpaket">Startpaket</option>
+              <option value="Företagspaket">Företagspaket</option>
+              <option value="Premiumpaket">Premiumpaket</option>
+            </select>
+          )}
+        </div>
+
         <div className={styles.inputGroup}>
           <label htmlFor="message">Meddelande</label>
           <textarea
