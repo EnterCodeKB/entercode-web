@@ -1,3 +1,5 @@
+/* Optimerad och enhetlig formulärdesign */
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -6,34 +8,15 @@
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrerar innehåll horisontellt */
-  gap: 2rem; /* Skapar avstånd mellan rubrik, formulär och kontaktinfo */
-  border-radius: 8px; /* Lägger till en mjuk kant */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lägger till en skuggeffekt */
+  align-items: center;
+  gap: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
 }
+
 .kontakth1 {
   color: #2645a2;
-}
-
-.selectInput {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  color: #333;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  appearance: none; /* Ta bort browserns standardpil */
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L0.803847 0.5H11.1962L6 8Z' fill='%230057B8'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 12px 8px;
-}
-
-.selectInput:focus {
-  outline: none;
-  border-color: #0057b8; /* Blå border på focus */
-  box-shadow: 0 0 0 2px rgba(0, 87, 184, 0.2); /* Lite skugga */
 }
 
 .heading {
@@ -41,11 +24,6 @@
   margin-bottom: 1rem;
   text-align: center;
   color: #333;
-}
-
-.inputButton:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
 
 .description {
@@ -56,10 +34,11 @@
 
 .form {
   width: 100%;
-  max-width: 600px; /* Begränsar formulärets bredd */
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Avstånd mellan input-fälten */
+  gap: 1.5rem;
+  animation: fadeIn 0.5s ease forwards; /* Fade-in animation på formuläret */
 }
 
 .inputGroup {
@@ -72,6 +51,82 @@
   font-weight: bold;
 }
 
+.inputGroup input,
+.inputGroup textarea,
+.selectInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  color: #333;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.inputGroup input:hover,
+.inputGroup textarea:hover,
+.selectInput:hover {
+  background-color: #f9f9f9;
+  border-color: #aaa;
+  cursor: pointer;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus,
+.selectInput:focus {
+  outline: none;
+  border-color: #0057b8;
+  box-shadow: 0 0 0 2px rgba(0, 87, 184, 0.2);
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.selectInput {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L0.803847 0.5H11.1962L6 8Z' fill='%230057B8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px 8px;
+}
+
+.inputButton {
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: #1e367d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 50px;
+  transition: background-color 0.3s ease;
+  position: relative !important;
+}
+
+.inputButton.success {
+  background-color: #28a745; /* Grön bakgrund när skickat */
+  color: white;
+}
+
+.inputButton:hover {
+  background-color: #1eb4cd;
+}
+
+.inputButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .successMessage {
   color: #68f0f0;
   font-size: 1.2rem;
@@ -79,7 +134,17 @@
   margin-top: 1rem;
 }
 
-/* Lägg till en animation för att förstärka effekten */
+.contactInfo {
+  text-align: center;
+  color: #555;
+  margin-top: 2rem;
+}
+
+.contactInfo h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -91,52 +156,57 @@
   }
 }
 
-.inputGroup input,
-.inputGroup textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* <-- ändrat till 8px! */
-  font-size: 1rem;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+/* Spinner för skickande */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1e367d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
 }
 
-.inputGroup textarea {
-  resize: none; /* Förhindra att textarea kan ändras i storlek */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.inputButton {
-  display: block; /* Gör knappen till ett blockelement */
-  width: 200px; /* Fixera knappens bredd */
-  height: 50px; /* Fixera knappens höjd */
-  background-color: #1e367d;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  margin: 0 auto; /* Centrerar knappen horisontellt */
-  line-height: 50px; /* Vertikal centrerad text inom knappen */
-  transition: background-color 0.3s ease; /* Mjuk övergångseffekt vid hover */
+/* Responsivitet */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .form {
+    padding: 0 1rem;
+  }
+
+  .inputButton {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
 }
 
-.inputButton:hover {
-  background-color: #1eb4cd;
-}
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.3rem;
+  }
 
-.contactInfo {
-  text-align: center;
-  color: #555;
-  margin-top: 2rem; /* Skapar avstånd från formuläret */
-}
+  .kontakth1 {
+    font-size: 1.5rem;
+  }
 
-.contactInfo h2 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.inputButton {
-  position: relative !important;
+  .successMessage {
+    font-size: 1rem;
+  }
 }

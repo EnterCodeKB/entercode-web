@@ -72,12 +72,14 @@ const KontaktSida = () => {
             <select
               id="package"
               name="package"
-              required
               defaultValue=""
               className={styles.selectInput}
             >
               <option value="" disabled>
-                Välj ett paket
+                Välj
+              </option>
+              <option value="Allmän förfrågan / Övrigt">
+                Allmän förfrågan / Övrigt
               </option>
               <option value="Startpaket">Startpaket</option>
               <option value="Företagspaket">Företagspaket</option>
@@ -104,9 +106,15 @@ const KontaktSida = () => {
         <button
           type="submit"
           className={styles.inputButton}
-          disabled={state.submitting}
+          disabled={state.submitting || state.succeeded}
         >
-          {state.submitting ? "Skickar..." : "Skicka"}
+          {state.submitting ? (
+            <div className={styles.spinner}></div>
+          ) : state.succeeded ? (
+            "✅ Skickat!"
+          ) : (
+            "Skicka"
+          )}
         </button>
       </form>
     </div>
