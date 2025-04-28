@@ -1,14 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { useSearchParams } from "next/navigation";
 import styles from "./index.module.css";
 
-const KontaktSida = () => {
+const KontaktForm = () => {
   const [state, handleSubmit] = useForm("mannvbln");
   const searchParams = useSearchParams();
   const paket = searchParams.get("paket");
+
   const formatPackageName = (paket) => {
     switch (paket) {
       case "startpaket":
@@ -87,7 +88,6 @@ const KontaktSida = () => {
             </select>
           )}
         </div>
-
         <div className={styles.inputGroup}>
           <label htmlFor="message">Meddelande</label>
           <textarea
@@ -105,7 +105,9 @@ const KontaktSida = () => {
         </div>
         <button
           type="submit"
-          className={styles.inputButton}
+          className={`${styles.inputButton} ${
+            state.succeeded ? styles.success : ""
+          }`}
           disabled={state.submitting || state.succeeded}
         >
           {state.submitting ? (
@@ -121,4 +123,10 @@ const KontaktSida = () => {
   );
 };
 
-export default KontaktSida;
+export default function KontaktSidaWrapper() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <KontaktForm />
+    </Suspense>
+  );
+}
