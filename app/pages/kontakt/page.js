@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { useSearchParams } from "next/navigation";
 import styles from "./index.module.css";
@@ -96,7 +96,7 @@ const KontaktForm = () => {
             rows="5"
             placeholder="Ditt meddelande"
             required
-          ></textarea>
+          />
           <ValidationError
             prefix="Message"
             field="message"
@@ -123,10 +123,4 @@ const KontaktForm = () => {
   );
 };
 
-export default function KontaktSidaWrapper() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <KontaktForm />
-    </Suspense>
-  );
-}
+export default KontaktForm;
