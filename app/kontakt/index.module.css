@@ -12,7 +12,7 @@
   gap: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+  animation: fadeIn 0.8s ease; /* Lägg till fade-in animation */
 }
 
 .kontakth1 {
@@ -38,7 +38,6 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  animation: fadeIn 0.5s ease forwards; /* Fade-in animation på formuläret */
 }
 
 .inputGroup {
@@ -51,6 +50,7 @@
   font-weight: bold;
 }
 
+/* Gemensam stil för input, textarea och select */
 .inputGroup input,
 .inputGroup textarea,
 .selectInput {
@@ -66,6 +66,7 @@
     background-color 0.3s ease;
 }
 
+/* Hover-effekt */
 .inputGroup input:hover,
 .inputGroup textarea:hover,
 .selectInput:hover {
@@ -74,6 +75,7 @@
   cursor: pointer;
 }
 
+/* Focus-effekt */
 .inputGroup input:focus,
 .inputGroup textarea:focus,
 .selectInput:focus {
@@ -95,6 +97,7 @@
   background-size: 12px 8px;
 }
 
+/* Submit-knapp */
 .inputButton {
   display: block;
   width: 200px;
@@ -110,12 +113,7 @@
   margin: 0 auto;
   line-height: 50px;
   transition: background-color 0.3s ease;
-  position: relative !important;
-}
-
-.inputButton.success {
-  background-color: #28a745; /* Grön bakgrund när skickat */
-  color: white;
+  position: relative;
 }
 
 .inputButton:hover {
@@ -127,6 +125,7 @@
   cursor: not-allowed;
 }
 
+/* Success-meddelande */
 .successMessage {
   color: #68f0f0;
   font-size: 1.2rem;
@@ -134,6 +133,7 @@
   margin-top: 1rem;
 }
 
+/* Kontaktinfo (om du använder den) */
 .contactInfo {
   text-align: center;
   color: #555;
@@ -145,6 +145,7 @@
   color: #333;
 }
 
+/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -153,26 +154,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-/* Spinner för skickande */
-.spinner {
-  width: 24px;
-  height: 24px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #1e367d;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 0 auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 
