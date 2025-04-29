@@ -1,28 +1,12 @@
-// app/components/FormComponent.js
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { useSearchParams } from "next/navigation";
+import FormInnerComponent from "./FormInnerComponent"; // <-- Lägg till
 import styles from "../styles/FormComponent.module.css";
 
 const FormComponent = () => {
   const [state, handleSubmit] = useForm("mannvbln");
-  const searchParams = useSearchParams();
-  const paket = searchParams.get("paket");
-
-  const formatPackageName = (paket) => {
-    switch (paket) {
-      case "startpaket":
-        return "Startpaket";
-      case "foretagspaket":
-        return "Företagspaket";
-      case "premiumpaket":
-        return "Premiumpaket";
-      default:
-        return "";
-    }
-  };
 
   if (state.succeeded) {
     return (
@@ -37,7 +21,42 @@ const FormComponent = () => {
     <div className={styles.container}>
       <h1 className={styles.heading}>Kontakta oss</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        {/* Inputs här */}
+        <div className={styles.inputGroup}>
+          <label htmlFor="name">Namn</label>
+          <input id="name" type="text" name="name" required />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="email">E-postadress</label>
+          <input id="email" type="email" name="email" required />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="package">Paket</label>
+          <Suspense fallback={<div>Loading package options...</div>}>
+            <FormInnerComponent />
+          </Suspense>
+        </div>
+
+        <div className={styles.inputGroup}>
+          <label htmlFor="message">Meddelande</label>
+          <textarea id="message" name="message" rows="5" required />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+        </div>
+
+        <button
+          type="submit"
+          className={styles.inputButton}
+          disabled={state.submitting}
+        >
+          {state.submitting ? "Skickar..." : "Skicka"}
+        </button>
       </form>
     </div>
   );
