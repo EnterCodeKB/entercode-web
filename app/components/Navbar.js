@@ -26,7 +26,7 @@ export default function Navbar() {
             src="/entercodeny.png"
             alt="logo"
             width={170}
-            height={auto}
+            height={170}
           />
         </Link>
       </div>
