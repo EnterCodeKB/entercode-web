@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import { useSearchParams } from "next/navigation";
 import styles from "../styles/FormComponent.module.css";
 
-const FormInnerComponent = ({ paket }) => {
+export default function FormInnerComponent() {
+  const searchParams = useSearchParams();
+  const paket = searchParams.get("paket");
+
   const formatPackageName = (paket) => {
     switch (paket) {
       case "startpaket":
@@ -49,6 +52,4 @@ const FormInnerComponent = ({ paket }) => {
       <option value="Premiumpaket">Premiumpaket</option>
     </select>
   );
-};
-
-export default FormInnerComponent;
+}
