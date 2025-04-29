@@ -1,15 +1,15 @@
 "use client";
 
-import dynamic from "next/dynamic";
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
-const FormComponent = dynamic(() => import("@/app/components/FormComponent"), {
-  ssr: false,
-});
+import { Suspense } from "react";
+import FormComponent from "@/app/components/FormComponent";
 
 export default function Page() {
   return (
-    <div>
+    <Suspense fallback={<div>Laddar formulär...</div>}>
       <FormComponent />
-    </div>
+    </Suspense>
   );
 }
