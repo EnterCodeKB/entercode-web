@@ -1,3 +1,4 @@
+// app/components/FormComponent.js
 "use client";
 
 import React from "react";
@@ -36,88 +37,7 @@ const FormComponent = () => {
     <div className={styles.container}>
       <h1 className={styles.heading}>Kontakta oss</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.inputGroup}>
-          <label htmlFor="name">Namn</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Ditt namn"
-            required
-          />
-          <ValidationError prefix="Name" field="name" errors={state.errors} />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="email">E-postadress</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Din e-postadress"
-            required
-          />
-          <ValidationError prefix="Email" field="email" errors={state.errors} />
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="package">Paket</label>
-          {paket ? (
-            <input
-              id="package"
-              type="text"
-              name="package"
-              value={formatPackageName(paket)}
-              readOnly
-              placeholder="Valt paket"
-            />
-          ) : (
-            <select
-              id="package"
-              name="package"
-              defaultValue=""
-              className={styles.selectInput}
-            >
-              <option value="" disabled>
-                Välj
-              </option>
-              <option value="Allmän förfrågan / Övrigt">
-                Allmän förfrågan / Övrigt
-              </option>
-              <option value="Startpaket">Startpaket</option>
-              <option value="Företagspaket">Företagspaket</option>
-              <option value="Premiumpaket">Premiumpaket</option>
-            </select>
-          )}
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="message">Meddelande</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="Ditt meddelande"
-            required
-          />
-          <ValidationError
-            prefix="Message"
-            field="message"
-            errors={state.errors}
-          />
-        </div>
-        <button
-          type="submit"
-          className={`${styles.inputButton} ${
-            state.succeeded ? styles.success : ""
-          }`}
-          disabled={state.submitting || state.succeeded}
-        >
-          {state.submitting ? (
-            <div className={styles.spinner}></div>
-          ) : state.succeeded ? (
-            "✅ Skickat!"
-          ) : (
-            "Skicka"
-          )}
-        </button>
+        {/* Inputs här */}
       </form>
     </div>
   );

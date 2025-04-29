@@ -1,8 +1,4 @@
-"use client";
-
-export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
-
+// app/kontakt/page.js
 import { Suspense } from "react";
 import FormComponent from "@/app/components/FormComponent";
 
