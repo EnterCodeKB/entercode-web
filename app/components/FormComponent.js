@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { useSearchParams } from "next/navigation";
-import styles from "./index.module.css";
+import styles from "../styles/FormComponent.module.css";
 
 const KontaktForm = () => {
   const [state, handleSubmit] = useForm("mannvbln");

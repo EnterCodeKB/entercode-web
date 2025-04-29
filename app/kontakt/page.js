@@ -3,12 +3,12 @@
 export const dynamic = "force-dynamic";
 
 import { Suspense } from "react";
-import KontaktForm from "../form/page";
+import FormComponent from "@/app/components/FormComponent";
 
 export default function Page() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <KontaktForm />
+    <Suspense fallback={<div>Laddar formulär...</div>}>
+      <FormComponent />
     </Suspense>
   );
 }
