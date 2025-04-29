@@ -1,11 +1,12 @@
-// app/kontakt/page.js
 import { Suspense } from "react";
-import FormComponent from "@/app/components/FormComponent";
+import FormInnerComponent from "@/app/components/FormInnerComponent";
 
-export default function Page() {
+export default function Page({ searchParams }) {
+  const paket = searchParams?.paket || "";
+
   return (
     <Suspense fallback={<div>Laddar formulär...</div>}>
-      <FormComponent />
+      <FormInnerComponent paket={paket} />
     </Suspense>
   );
 }
