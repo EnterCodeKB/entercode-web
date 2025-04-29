@@ -1,13 +1,11 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
-import React, { Suspense } from "react";
+import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { useSearchParams } from "next/navigation";
 import styles from "../styles/FormComponent.module.css";
 
-const InnerForm = () => {
+const FormComponent = () => {
   const [state, handleSubmit] = useForm("mannvbln");
   const searchParams = useSearchParams();
   const paket = searchParams.get("paket");
@@ -122,14 +120,6 @@ const InnerForm = () => {
         </button>
       </form>
     </div>
-  );
-};
-
-const FormComponent = () => {
-  return (
-    <Suspense fallback={<div>Laddar formulär...</div>}>
-      <InnerForm />
-    </Suspense>
   );
 };
 

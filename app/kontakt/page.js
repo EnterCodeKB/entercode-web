@@ -1,9 +1,15 @@
 "use client";
 
-export const dynamic = "force-dynamic";
+import dynamic from "next/dynamic";
 
-import FormComponent from "@/app/components/FormComponent";
+const FormComponent = dynamic(() => import("@/app/components/FormComponent"), {
+  ssr: false,
+});
 
 export default function Page() {
-  return <FormComponent />;
+  return (
+    <div>
+      <FormComponent />
+    </div>
+  );
 }
