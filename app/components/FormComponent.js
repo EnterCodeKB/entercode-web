@@ -1,11 +1,11 @@
 "use client";
 
-import React, { Suspense } from "react";
-import { useForm, ValidationError } from "@formspree/react";
+import { Suspense } from "react";
 import FormInnerComponent from "./FormInnerComponent";
+import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/FormComponent.module.css";
 
-const FormComponent = ({ paket }) => {
+export default function FormComponent() {
   const [state, handleSubmit] = useForm("mannvbln");
 
   if (state.succeeded) {
@@ -35,8 +35,8 @@ const FormComponent = ({ paket }) => {
 
         <div className={styles.inputGroup}>
           <label htmlFor="package">Paket</label>
-          <Suspense fallback={<div>Laddar paket...</div>}>
-            <FormInnerComponent paket={paket} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <FormInnerComponent />
           </Suspense>
         </div>
 
@@ -60,6 +60,4 @@ const FormComponent = ({ paket }) => {
       </form>
     </div>
   );
-};
-
-export default FormComponent;
+}

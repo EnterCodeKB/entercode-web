@@ -28,7 +28,6 @@ export default function FormInnerComponent() {
         name="package"
         value={formatPackageName(paket)}
         readOnly
-        placeholder="Valt paket"
         className={styles.selectInput}
       />
     );

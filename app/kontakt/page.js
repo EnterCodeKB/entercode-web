@@ -1,7 +1,7 @@
+"use client"; // <-- LÄGG TILL detta
+
 import FormComponent from "@/app/components/FormComponent";
 
-export default function Page({ searchParams }) {
-  const paket = searchParams?.paket || "";
-
-  return <FormComponent paket={paket} />;
+export default function Page() {
+  return <FormComponent />;
 }
