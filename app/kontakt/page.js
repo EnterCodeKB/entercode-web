@@ -1,7 +1,10 @@
-"use client"; // <-- LÄGG TILL detta
-
+import { Suspense } from "react";
 import FormComponent from "@/app/components/FormComponent";
 
 export default function Page() {
-  return <FormComponent />;
+  return (
+    <Suspense fallback={<div>Laddar formulär...</div>}>
+      <FormComponent />
+    </Suspense>
+  );
 }
