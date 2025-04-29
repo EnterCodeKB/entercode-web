@@ -1,10 +1,12 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import styles from "../styles/FormComponent.module.css";
 
-export default function FormInnerComponent({ paket }) {
+const FormInnerComponent = ({ paket }) => {
   const [state, handleSubmit] = useForm("mannvbln");
 
   const formatPackageName = (paket) => {
@@ -44,7 +46,6 @@ export default function FormInnerComponent({ paket }) {
           />
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
-
         <div className={styles.inputGroup}>
           <label htmlFor="email">E-postadress</label>
           <input
@@ -56,7 +57,6 @@ export default function FormInnerComponent({ paket }) {
           />
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
-
         <div className={styles.inputGroup}>
           <label htmlFor="package">Paket</label>
           {paket ? (
@@ -87,7 +87,6 @@ export default function FormInnerComponent({ paket }) {
             </select>
           )}
         </div>
-
         <div className={styles.inputGroup}>
           <label htmlFor="message">Meddelande</label>
           <textarea
@@ -103,7 +102,6 @@ export default function FormInnerComponent({ paket }) {
             errors={state.errors}
           />
         </div>
-
         <button
           type="submit"
           className={`${styles.inputButton} ${
@@ -122,4 +120,6 @@ export default function FormInnerComponent({ paket }) {
       </form>
     </div>
   );
-}
+};
+
+export default FormInnerComponent;
