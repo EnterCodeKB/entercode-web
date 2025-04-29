@@ -3,7 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import { Suspense } from "react";
-import FormComponent from "../components/FormComponent";
+import FormComponent from "@/app/components/FormComponent";
 
 export default function Page() {
   return (
