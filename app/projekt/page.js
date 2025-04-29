@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-import ImageCarousel from "../../components/ImageCarousel";
+import ImageCarousel from "../components/ImageCarousel";
 import styles from "./projekt.module.css";
 
 export default function Projekt() {

@@ -46,28 +46,28 @@ export default function Navbar() {
 
           <li
             className={`${styles.lidiv} ${
-              pathname === "/pages/omoss" ? styles.active : ""
+              pathname === "/omoss" ? styles.active : ""
             }`}
           >
-            <Link href="/pages/omoss">OM OSS</Link>
+            <Link href="/omoss">OM OSS</Link>
           </li>
 
           <li
             className={`${styles.lidiv} ${
-              pathname === "/pages/kontakt" ? styles.active : ""
+              pathname === "/kontakt" ? styles.active : ""
             }`}
           >
             {" "}
-            <Link href="/pages/kontakt">KONTAKT</Link>
+            <Link href="/kontakt">KONTAKT</Link>
           </li>
 
           <li
             className={`${styles.lidiv} ${
-              pathname === "/pages/prispaket" ? styles.active : ""
+              pathname === "/prispaket" ? styles.active : ""
             }`}
           >
             {" "}
-            <Link href="/pages/prispaket">PRISPAKET</Link>
+            <Link href="/prispaket">PRISPAKET</Link>
           </li>
         </ul>
       </div>
