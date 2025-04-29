@@ -2,12 +2,12 @@
 
 export const dynamic = "force-dynamic";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { useSearchParams } from "next/navigation";
 import styles from "../styles/FormComponent.module.css";
 
-const KontaktForm = () => {
+const InnerForm = () => {
   const [state, handleSubmit] = useForm("mannvbln");
   const searchParams = useSearchParams();
   const paket = searchParams.get("paket");
@@ -125,4 +125,12 @@ const KontaktForm = () => {
   );
 };
 
-export default KontaktForm;
+const FormComponent = () => {
+  return (
+    <Suspense fallback={<div>Laddar formulär...</div>}>
+      <InnerForm />
+    </Suspense>
+  );
+};
+
+export default FormComponent;
