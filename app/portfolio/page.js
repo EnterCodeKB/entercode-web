@@ -22,11 +22,11 @@ const projects = [
     url: "https://www.auxesis.se",
   },
   {
-    title: "Smått & Gott",
+    title: "HemmaGott",
     description: "Samling av recept – enkelt, gott och hemtrevligt.",
     category: "Receptapp",
     image: "/images/smattochgott.png", // OBS: detta är korrekt när bilden ligger i public/images
-    id: "smattochgott",
+    id: "hemmagott",
     url: "https://www.hemmagott.se",
   },
 ];

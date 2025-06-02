@@ -12,6 +12,13 @@
   display: grid;
   gap: 2rem;
 }
+.bottomLinks {
+  margin-right: 20px;
+}
+
+.bottomText {
+  margin-left: 20px;
+}
 
 @media (min-width: 768px) {
   .container {
