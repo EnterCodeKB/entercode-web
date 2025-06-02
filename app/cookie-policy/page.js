@@ -1,9 +1,6 @@
 "use client";
 
-import styles from "../styles/CookiePolicy.module.css"
-import CookieBanner from "../components/CookieBanner"; // Anpassa sökvägen
-;
-
+import styles from "@/styles/CookiePolicy.module.css";
 export default function CookiePolicy() {
   return (
     <div className={styles["cookie-policy-container"]}>

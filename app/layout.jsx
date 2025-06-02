@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import BackgroundWrapper from "@/components/BackgroundWrapper";
 import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {

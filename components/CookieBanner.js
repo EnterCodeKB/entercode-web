@@ -51,24 +51,30 @@ export default function CookieBanner() {
         <div className={styles.banner}>
           <p>
             Vi använder cookies för att förbättra din upplevelse. Klicka på
-            "Godkänn alla" för att acceptera alla cookies eller välj
-            "Anpassa" för att göra dina val. Läs mer i vår{" "}
+            "Godkänn alla" för att acceptera alla cookies eller välj "Anpassa"
+            för att göra dina val. Läs mer i vår{" "}
             <a href="/privacy-policy" className={styles.link}>
               integritetspolicy
-            </a>.
+            </a>
+            .
           </p>
           <div className={styles.actions}>
-  <button onClick={handleAcceptAll} className={styles.primaryButton}>
-    Godkänn alla
-  </button>
-  <button onClick={handleShowPreferences} className={styles.secondaryButton}>
-    Anpassa
-  </button>
-  <button onClick={handleAcceptEssential} className={styles.secondaryButton}>
-    Bara nödvändiga
-  </button>
-</div>
-
+            <button onClick={handleAcceptAll} className={styles.primaryButton}>
+              Godkänn alla
+            </button>
+            <button
+              onClick={handleShowPreferences}
+              className={styles.secondaryButton}
+            >
+              Anpassa
+            </button>
+            <button
+              onClick={handleAcceptEssential}
+              className={styles.secondaryButton}
+            >
+              Bara nödvändiga
+            </button>
+          </div>
         </div>
       )}
 
@@ -99,7 +105,10 @@ export default function CookieBanner() {
             </label>
           </div>
           <div className={styles.actions}>
-            <button onClick={handleSavePreferences} className={styles.primaryButton}>
+            <button
+              onClick={handleSavePreferences}
+              className={styles.primaryButton}
+            >
               Spara val
             </button>
           </div>
