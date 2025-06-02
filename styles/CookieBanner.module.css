@@ -1,0 +1,139 @@
+/* Huvudbanner */
+.banner {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #333333;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  width: 600px;
+  height: 160px;
+  z-index: 1000;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.banner p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555555;
+}
+
+.banner a {
+  color: #0078d7;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.banner a:hover {
+  color: #005a9e;
+}
+
+/* Knappar och positionering */
+.actions {
+ 
+  gap: 10px; /* Lämna mellanrum mellan knapparna */
+  margin-top: 10px;
+}
+.primaryButton{
+  width: 150px; /* Anpassa bredden till innehållet */
+  height: 40px;
+  padding: 8px 12px; /* Mindre padding för kompakta knappar */
+  font-size: 14px; /* Standard textstorlek */
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 320px;
+  margin-top: 100px;
+}
+
+.secondaryButton {
+  width: 150px; /* Anpassa bredden till innehållet */
+  height: 40px;
+  margin-left: 120px;
+  margin-top: 100px;
+  padding: 8px 12px; /* Mindre padding för kompakta knappar */
+  font-size: 14px; /* Standard textstorlek */
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  /*white-space: nowrap;  Förhindra radbrytning i knapptext */
+
+}
+
+.primaryButton {
+  background-color: #0078d7;
+  color: #ffffff;
+  border: none;
+}
+
+.primaryButton:hover {
+  background-color: #005a9e;
+}
+
+.secondaryButton {
+  background-color: #f4f4f4;
+  color: #333333;
+  border: 1px solid #cccccc;
+}
+
+.secondaryButton:hover {
+  background-color: #e4e4e4;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  max-width: 350px;
+  width: calc(100% - 40px);
+  z-index: 1001;
+  text-align: center;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+  font-size: 14px;
+  color: #555555;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkboxGroup label {
+  font-size: 14px;
+  color: #333333;
+}
+
+.modal .actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

@@ -1,81 +1,115 @@
-"use client";
 import React from "react";
 import styles from "./omoss.module.css";
-import FourCards from "../components/FourCards";
+import Image from "next/image";
 
-export default function Work() {
+export default function AboutPage() {
   return (
-    <div className={styles.gridcontainer}>
-      <div className={styles.workingcontainer}>
-        <div>
-          <img
-            src="/arbetsplats.jpeg"
-            width={900}
-            alt="gardinen"
-            className={styles.workimg}
-          />
-        </div>
-        <div className={styles.cardscontainer}>
-          <FourCards />
-        </div>
-      </div>
-      <div className={styles.a4container}>
-        <div className={styles.gardincontainer}>
-          <h1 className={styles.h1box}>
-            Det är en plats att skapa, växa och drömma stort
+    <section className={styles.section} aria-labelledby="about-heading">
+      <div className={styles.container}>
+        <div className={styles.textCenter}>
+          <h1 id="about-heading" className={styles.title}>
+            Om <span className={styles.highlight}>oss</span>
           </h1>
-          <div>
-            <img
-              src="/gardinen1.png"
-              width={400}
-              alt="gardinen"
-              className={styles.rotatedimg}
-            />
+          <p className={styles.description}>
+            Lär känna teamet bakom entercode – en familjedriven webbyrå med
+            kombinerad expertis och personlig service.
+          </p>
+        </div>
+
+        <div className={styles.grid}>
+          <div className={styles.history}>
+            <h2 className={styles.subheading}>Vår historia</h2>
+            <p>
+              Entercode grundades ur en gemensam passion för webbutveckling,
+              design och problemlösning. Det som började som ett kreativt
+              sidoprojekt mellan två teknikälskare växte snabbt till en
+              personlig och pålitlig webbyrå med kunder från flera olika
+              branscher.
+            </p>
+            <p>
+              Med Helenas erfarenhet inom IT och Karolinas moderna perspektiv
+              från UX-design och teknik, förenar vi teknisk kompetens med
+              estetisk känsla. Tillsammans skapar vi skräddarsydda lösningar som
+              både fungerar felfritt och ser fantastiska ut.
+            </p>
+            <div className={styles.stats}>
+              <div>
+                <p className={styles.statNumber}>5+</p>
+                <p className={styles.statLabel}>År av erfarenhet</p>
+              </div>
+              <div>
+                <p className={styles.statNumber}>20+</p>
+                <p className={styles.statLabel}>Nöjda kunder</p>
+              </div>
+              <div>
+                <p className={styles.statNumber}>50+</p>
+                <p className={styles.statLabel}>Slutförda projekt</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.imageGrid}>
+            <div className={styles.card}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src="/images/devices.jpeg"
+                  alt="Helena, medgrundare"
+                  fill
+                  className={styles.image}
+                />
+              </div>
+              <div className={styles.imageText}>
+                <h3>Helena Adelsten</h3>
+                <p>Webbutvecklare & Grundare</p>
+              </div>
+            </div>
+            <div className={styles.card}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src="/images/webbdesiner.jpeg"
+                  alt="Karolina, medgrundare"
+                  fill
+                  className={styles.image}
+                />
+              </div>
+              <div className={styles.imageText}>
+                <h3>Karolina L Boman</h3>
+                <p>UX Designer & Medgrundare</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className={styles.visioncontainer}>
-          <p className={styles.textcontainer}>
-            Vi är en webbbyrå och IT-partner med ett personligt och familjärt
-            engagemang. Vi har kombinerat vår erfarenhet och passion för teknik,
-            design och problemlösning för att skapa en byrå där kreativitet
-            möter pålitliga IT-lösningar. <br />
-            <br />
-            Med en bakgrund inom peogrammering och it-teknik erbjuder vi
-            skräddarsydda lösningar för både små och medelstora företag som vill
-            växa online och effektivisera sin verksamhet. <br />
-            <br />
-            Vi tror på att bygga starka relationer med våra kunder och ser varje
-            projekt som ett samarbete där vi tillsammans skapar något unikt.
-            Oavsett om du behöver en modern webbplats, IT-support eller
-            strategiska lösningar för att förenkla din vardag, finns vi här för
-            att hjälpa dig.
-            <br />
+
+        <div className={styles.storyText}>
+          <p>
+            Vårt mål är att göra teknik och digitala lösningar tillgängliga,
+            personliga och enkla. Med bakgrund inom programmering och IT-teknik
+            erbjuder vi smarta tjänster för små och medelstora företag som vill
+            växa online och effektivisera sin vardag.{" "}
           </p>
-          <div className={styles.visiondiv}>
-            <h2>Vår vision</h2>
-            <p className={styles.visiontext}>
-              {" "}
-              Att göra teknik och digitala lösningar tillgängliga, personliga
-              och enkla för alla.
-            </p>
-            <h2>Våra värderingar</h2>
-            <ul>
-              <li>
-                <strong>Personligt bemötande:</strong>Vi är alltid nära till
-                hands och lägger stor vikt vid att förstå våra kunders behov.
-              </li>
-              <li>
-                <strong>Kreativitet:</strong>Varje lösning är unik, precis som
-                våra kunder.
-              </li>
-              <li>
-                <strong>Tillförlitlighet:</strong>Vi håller vad vi lovar och
-                levererar kvalitet i varje steg.
-              </li>
-            </ul>
-          </div>
+          <p>
+            Vi tror på nära samarbete och starka relationer. Varje projekt är
+            ett partnerskap där vi tillsammans skapar något unikt. Behöver du en
+            modern webbplats, teknisk support eller strategiska lösningar? Då
+            finns vi här för dig – engagerade, nyfikna och lösningsorienterade.
+          </p>
+          <h2 className={styles.subheading}>Våra värderingar:</h2>
+          <ul className={styles.valuesList}>
+            <li>
+              <strong>Personligt bemötande</strong> – Vi lyssnar, är
+              tillgängliga och lär känna våra kunders behov på djupet.
+            </li>
+            <li>
+              <strong>Kreativitet</strong> – Varje lösning är unik, precis som
+              våra kunder.
+            </li>
+            <li>
+              <strong>Tillförlitlighet</strong> – Vi håller vad vi lovar och
+              levererar kvalitet i varje steg.
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

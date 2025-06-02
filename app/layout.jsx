@@ -1,38 +1,38 @@
-import Head from "next/head";
+// app/layout.jsx
+import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./globals.css";
-import Footer from "./components/Footer";
-import Nav from "./components/Navbar";
-import BackgroundWrapper from "./components/BackgroundWrapper";
-import CookieBanner from "./components/CookieBanner"; // Anpassa sökvägen
+
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import BackgroundWrapper from "@/components/BackgroundWrapper";
+import CookieBanner from "@/components/CookieBanner";
+
+export const metadata = {
+  title: "EnterCode Sweden KB",
+  description: "Webbdesign",
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <Head>
-        <title>EnterCode Sweden KB</title>
-        <meta name="Webbdesign" content="Webbdesign" />
-
-        {/* Lägg till Montserrat-fonten från Google Fonts */}
+    <html lang="sv">
+      <head>
+        {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossorigin="true"
+          crossOrigin="anonymous"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
-      </Head>
+      </head>
       <body>
-        <BackgroundWrapper>
-          <Nav />
-          <CookieBanner />{" "}
-          {/* Placera CookieBanner här för att visa den högst upp */}
-          <main className="relative">{children}</main>
-        </BackgroundWrapper>
+        <Header />
+        <CookieBanner />
+        <main className="relative">{children}</main>
         <Footer />
       </body>
     </html>
