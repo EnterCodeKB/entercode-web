@@ -7,8 +7,7 @@ import Link from "next/link";
 const projects = [
   {
     title: "PW NORD",
-    description:
-      "Webbplatsdesign för ett företag som tar hand om professionella rengöring av altaner och uteplatser.",
+    description: "Professionell rengöring av altaner och uteplatser.",
     category: "Webbdesign & Utveckling",
     image: "/images/pwnord1.png", // denna ska finnas i public/images
     id: "pwnord",
