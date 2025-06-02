@@ -1,9 +1,9 @@
 "use client";
 
 import styles from "@/styles/PrivacyPolicy.module.css";
-export default function CookiePolicy() {
+export default function PrivacyPolicy() {
   return (
-    <div className={styles["cookie-policy-container"]}>
+    <div className={styles["privacy-policy-container"]}>
       <h1>Cookiepolicy för EnterCode Sweden KB</h1>
       <p>
         Denna cookiepolicy förklarar hur vi använder cookies på vår webbplats.
