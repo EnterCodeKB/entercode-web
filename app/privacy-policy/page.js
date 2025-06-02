@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/CookiePolicy.module.css";
+import styles from "@/styles/PrivacyPolicy.module.css";
 export default function CookiePolicy() {
   return (
     <div className={styles["cookie-policy-container"]}>
