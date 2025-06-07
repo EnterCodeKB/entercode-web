@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
         <br />
         EnterCode Sweden KB
         <br />
-        E-post: <a href="mailto:info@entercode.se">info@entercode.se</a>
+        E-post:web[at]entercode.se
         <br />
         Telefon: 070-267 38 85
       </p>

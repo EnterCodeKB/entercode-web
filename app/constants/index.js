@@ -46,6 +46,6 @@ export const FOOTER_CONTACT_INFO = {
   title: "Kontakta oss",
   links: [
     { label: "Tel.nr:", value: "+46 70 267 38 85" },
-    { label: "E-postadress", value: "info@entercode.se" },
+    { label: "E-postadress", value: "web[at]entercode.se" },
   ],
 };

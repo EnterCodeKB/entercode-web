@@ -83,9 +83,7 @@ const Footer = () => {
               </a>
             </li>
             <li className={styles.linkItem}>
-              <a href="mailto:hej@entercode.se" className={styles.link}>
-                info@entercode.se
-              </a>
+              <div className={styles.link}>web[at]entercode.se </div>
             </li>
           </ul>
         </div>
