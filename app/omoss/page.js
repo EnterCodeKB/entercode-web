@@ -52,7 +52,7 @@ export default function AboutPage() {
             <div className={styles.card}>
               <div className={styles.imageWrapper}>
                 <Image
-                  src="/images/devices.jpeg"
+                  src="/helenabildny2.png"
                   alt="Helena, medgrundare"
                   fill
                   className={styles.image}
@@ -66,7 +66,7 @@ export default function AboutPage() {
             <div className={styles.card}>
               <div className={styles.imageWrapper}>
                 <Image
-                  src="/images/webbdesiner.jpeg"
+                  src="/karolinabildny2.png"
                   alt="Karolina, medgrundare"
                   fill
                   className={styles.image}
