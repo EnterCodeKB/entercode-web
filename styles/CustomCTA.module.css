@@ -1,0 +1,54 @@
+.cta {
+  background-color: #f26440;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.text p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  background-color: #1d4ed8;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1c467f;
+}
+@media (max-width: 768px) {
+  .text h2 {
+    font-size: 1.5rem;
+  }
+
+  .text p {
+    font-size: 1rem;
+  }
+
+  .cta {
+    padding: 60px 16px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}

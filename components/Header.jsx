@@ -72,8 +72,8 @@ const Header = () => {
         <div id="mobile-menu" className={styles.mobileMenu}>
           <nav className={styles.mobileNav} aria-label="Mobil meny">
             <Link
-              href="/om-oss"
-              className={isActive("/om-oss")}
+              href="/omoss"
+              className={isActive("/omoss")}
               onClick={() => setIsMenuOpen(false)}
             >
               Om oss

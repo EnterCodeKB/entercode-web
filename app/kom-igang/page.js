@@ -1,3 +1,5 @@
+// app/kom-igang/page.js
+
 "use client";
 
 import React from "react";
