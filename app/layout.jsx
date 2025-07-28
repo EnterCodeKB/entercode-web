@@ -58,7 +58,26 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         />
+
+        {/* Structured data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "EnterCode Sweden KB",
+              url: "https://www.entercode.se",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://www.entercode.se/sok?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </head>
+
       <body>
         <Header />
         <CookieBanner />
