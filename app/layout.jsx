@@ -9,7 +9,10 @@ import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "EnterCode Sweden KB",
-  description: "Webbdesign",
+  description: "Webb & App Solutions",
+  icons: {
+    icon: "/bluelogganren.png",
+  },
 };
 
 export default function RootLayout({ children }) {
