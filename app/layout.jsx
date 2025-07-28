@@ -9,9 +9,37 @@ import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "EnterCode Sweden KB",
-  description: "Webb & App Solutions",
+  description:
+    "Vi erbjuder moderna webblösningar och apputveckling skräddarsydda för dina behov.",
+  metadataBase: new URL("https://www.entercode.se"),
   icons: {
-    icon: "/bluelogganren.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+
+  openGraph: {
+    title: "EnterCode Sweden KB",
+    description: "Webb- och apputveckling för framtiden.",
+    url: "https://www.entercode.se",
+    siteName: "EnterCode",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "sv_SE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "EnterCode Sweden KB",
+    description: "Webb- och apputveckling för framtiden.",
+    images: ["/og-image.png"],
+  },
+  other: {
+    "google-site-verification": "DIN_GOOGLE_KOD_HÄR",
   },
 };
 
