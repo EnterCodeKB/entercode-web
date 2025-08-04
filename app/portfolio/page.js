@@ -1,15 +1,17 @@
+//app/portfolio/page.js
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/app/portfolio/portfolio.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import DemoCarousel from "@/components/DemoCarousel";
 
 const projects = [
   {
     title: "PW NORD",
     description: "Professionell rengöring av altaner och uteplatser.",
     category: "Webbdesign & Utveckling",
-    image: "/images/pwnord1.png", // denna ska finnas i public/images
+    image: "/images/pwnoronepg.png",
     id: "pwnord",
     url: "https://www.pwnord.se",
   },
@@ -17,7 +19,7 @@ const projects = [
     title: "Auxesis",
     description: "Professionell webbplats för en forskningsbolag inom smärta.",
     category: "Web & Branding",
-    image: "/images/auxesis.png", // denna ska också ligga i public/images
+    image: "/images/auxesis.png",
     id: "auxesis",
     url: "https://www.auxesis.se",
   },
@@ -25,9 +27,90 @@ const projects = [
     title: "HemmaGott",
     description: "Samling av recept – enkelt, gott och hemtrevligt.",
     category: "Receptapp",
-    image: "/images/smattochgott.png", // OBS: detta är korrekt när bilden ligger i public/images
+    image: "/images/hemmagottbgbild.png",
     id: "hemmagott",
     url: "https://www.hemmagott.se",
+  },
+];
+
+const demos = [
+  {
+    title: "Frisörsalong",
+    description:
+      "Modern hemsida med onlinebokning, tjänstelista och galleribilder.",
+    category: "Skönhet & Hälsa",
+    images: [
+      "/images/demo/demo-frisor-1.jpeg",
+      "/images/demo/demo-frisor-2.jpeg",
+      "/images/demo/demo-frisor-3.jpeg",
+    ],
+    url: "/kontakt?fran=frisor",
+    ctaText: "Få en liknande hemsida",
+  },
+  {
+    title: "Restaurang",
+    description:
+      "Menypresentation, öppettider och bordsbokning för mobil och desktop.",
+    category: "Mat & Dryck",
+    images: [
+      "/images/demo/demo-restaurang-1.jpeg",
+      "/images/demo/demo-restaurang-2.jpeg",
+      "/images/demo/demo-restaurang-3.jpeg",
+    ],
+    url: "/kontakt?fran=restaurang",
+    ctaText: "Få en liknande hemsida",
+  },
+  {
+    title: "Byggfirma",
+    description:
+      "Visa upp projekt, tjänster, offertförfrågan och kontaktformulär.",
+    category: "Tjänsteföretag",
+    images: [
+      "/images/demo/demo-bygg-1.jpeg",
+      "/images/demo/demo-bygg-2.jpeg",
+      "/images/demo/demo-bygg-3.jpeg",
+    ],
+    url: "/kontakt?fran=byggfirma",
+    ctaText: "Få en liknande hemsida",
+  },
+  {
+    title: "E-handel – Kläder",
+    description:
+      "Trendig webbshop med produktvisning, filtrering och snabbkassa.",
+    category: "E-handel",
+    images: [
+      "/images/demo/demo-eshop-1.jpeg",
+      "/images/demo/demo-eshop-2.jpeg",
+      "/images/demo/demo-eshop-3.jpeg",
+    ],
+    url: "/kontakt?fran=eshop",
+    ctaText: "Få en liknande webshop",
+  },
+  {
+    title: "Terapeut / Coach",
+    description:
+      "Lugn design med bokningssystem, presentation av tjänster och kontaktformulär.",
+    category: "Hälsa & Välmående",
+    images: [
+      "/images/demo/demo-coach-1.jpeg",
+      "/images/demo/demo-coach-2.jpeg",
+      "/images/demo/demo-coach-3.jpeg",
+    ],
+    url: "/kontakt?fran=coach",
+    ctaText: "Få en liknande hemsida",
+  },
+  {
+    title: "Konsultbolag",
+    description:
+      "Proffsig design med tjänstepresentation, case och kontaktvägar.",
+    category: "Företagstjänster",
+    images: [
+      "/images/demo/demo-konsult-1.jpeg",
+      "/images/demo/demo-konsult-2.jpeg",
+      "/images/demo/demo-konsult-3.jpeg",
+    ],
+    url: "/kontakt?fran=konsult",
+    ctaText: "Få en liknande hemsida",
   },
 ];
 
@@ -59,7 +142,8 @@ export default function PortfolioPage() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    fill
+                    width={400}
+                    height={225}
                     className={styles.image}
                   />
                 </div>
@@ -74,7 +158,20 @@ export default function PortfolioPage() {
             </Link>
           ))}
         </div>
+
+        <div className={styles.textCenter}>
+          <h2 className={styles.title}>
+            Exempel <span className={styles.highlight}>per bransch</span>
+          </h2>
+          <p className={styles.description}>
+            Här ser du olika typer av hemsidor vi kan skapa för din verksamhet.
+            Välj en stil som passar dig!
+          </p>
+        </div>
       </div>
+
+      {/* Ny karusell för demosektion */}
+      <DemoCarousel demos={demos} />
     </section>
   );
 }
